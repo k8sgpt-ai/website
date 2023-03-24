@@ -2,22 +2,20 @@
   <meta charset="utf-8">
   <title>{{ .Title }}</title>
 
-  <!-- Twitter card -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="{{ .Site.Title }}" />
-  <meta name="twitter:title" content="{{ .Title }}" />
-  <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}"/>
-  <meta name="twitter:creator" content="k8sgpt" />
-  <meta name="twitter:image" content="{{ `images/logo.png` | absURL }}"/>
-
-
-  {{ with .Params.image }}
   {{ "<!-- mobile responsive meta -->" | safeHTML }}
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
   {{ with site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
   {{ hugo.Generator }}
   
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="{{ .Site.Title }}" />
+  <meta name="twitter:title" content="{{ .Title }}" />
+  <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}"/>
+  <meta name="twitter:creator" content="k8sgpt" />
+  <meta name="twitter:image" content="{{ `images/logo.png` | absURL }}" />
+
   <!-- theme meta -->
   <meta name="theme-name" content="vex-hugo" />
 
