@@ -11,7 +11,7 @@ banner:
 
 ############################# Feature ############################
 features:
-  enable: false
+  enable: true
   title: "Our Core Features"
   image: "images/watch-2.png"
 
