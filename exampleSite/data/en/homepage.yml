@@ -51,19 +51,16 @@ features:
 
 ############################# promo ############################
 promo:
-  enable: false
-  image: "images/watch.png"
-  title: "Designed by professional , the benefit for creative gigs"
+  enable: true
+  image: "images/kubernetes.svg"
+  title: "Works on all CNCF conformant Kubernetes clusters"
   content:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia vel labore, deleniti minima
-    nisi, velit atque quaerat impedit ea maxime sunt accusamus at obcaecati dolor iure iusto omnis quis eum.
-    <br><br>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis commodi odit, illo, qui aliquam dol"
+    "We want k8sgpt to stay relevant to the latest Kubernetes releases. We test it on all CNCF conformant Kubernetes clusters upto N-2 releases."
 
 ############################# About Product #######################
 about_product:
   enable: true
-  title: "Work smart not hard"
+  title: "Work smart, not hard"
   items:
     # about product item loop
     - image: "images/demo1.gif"
@@ -92,7 +89,7 @@ products:
 
 ################################## Subscription ###################
 subscription:
-  enable: true
+  enable: false
   bg_image: "images/call-to-action-2.jpg"
   title: "Find out more about K8sGPT"
   content: "Join our mailing list and will let you know when big things are happening"

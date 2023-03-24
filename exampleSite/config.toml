@@ -115,7 +115,7 @@ snipcart_api = "ZDgxY2ZiM2EtMWRmMi00M2ZkLWI1MDAtNzA2MDc0Y2Q1MzJlNjM3MTAzNDIwOTQ1
 # Subscription
 [params.subscription]
 # mailchimp subsciption                                                         # replace this code with yours
-mailchimp_form_action = "https://gmail.us21.list-manage.com/subscribe/post?u=ba92d9b672b969b1f37175eec&amp;id=1559b09783&amp;f_id=00da9ae1f0"
+mailchimp_form_action = "https://k8sgpt.us21.list-manage.com/subscribe/post?u=ba92d9b672b969b1f37175eec&amp;id=1559b09783&amp;f_id=00da9ae1f0"
 mailchimp_form_name = "b_ba92d9b672b969b1f37175eec_1559b09783"
 
 ################################### English language #####################################
