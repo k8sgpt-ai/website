@@ -89,7 +89,7 @@ products:
 
 ################################## Subscription ###################
 subscription:
-  enable: false
+  enable: true
   bg_image: "images/call-to-action-2.jpg"
   title: "Find out more about K8sGPT"
   content: "Join our mailing list and will let you know when big things are happening"
