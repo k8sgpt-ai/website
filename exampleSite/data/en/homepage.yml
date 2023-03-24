@@ -11,43 +11,43 @@ banner:
 
 ############################# Feature ############################
 features:
-  enable: false
-  title: "Our Core Features"
-  image: "images/watch-2.png"
+  enable: true
+  title: "K8sGPT is for..."
+  image: "images/logo-black.png"
 
   # feature at the left of the image
   left_side:
     # feature item loop
-    - title: "Smooth Touch"
-      icon: "tf-ion-ios-alarm-outline"
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, inventore?"
-
-      # feature item loop
-    - title: "Elegant Design"
+    - title: "Workload health analysis"
       icon: "tf-ion-ios-bell-outline"
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, inventore?"
+      content: "Find critical issues with your workloads."
 
       # feature item loop
-    - title: "Easy Pricing"
-      icon: "tf-ion-ios-cart-outline"
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, inventore?"
+    - title: "Humans"
+      icon: "tf-ion-ios-body-outline"
+      content: "Designed to convert complex signals into easy to understand suggestions."
+
+    #   # feature item loop
+    # - title: "Easy Pricing"
+    #   icon: "tf-ion-ios-cart-outline"
+    #   content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, inventore?"
 
   # feature at the right of the image
   right_side:
     # feature item loop
-    - title: "Smooth Touch"
+    - title: "Fast triage, AI analysis"
       icon: "tf-ion-ios-alarm-outline"
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, inventore?"
+      content: "Look at your cluster a glance or use AI to analyze your cluster in depth."
 
       # feature item loop
-    - title: "Elegant Design"
-      icon: "tf-ion-ios-bell-outline"
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, inventore?"
+    - title: "Observing without impact"
+      icon: "tf-ion-ios-bookmarks-outline"
+      content: "K8sGPT does not make any changes to your cluster. It is a read-only tool."
 
-      # feature item loop
-    - title: "Easy Pricing"
-      icon: "tf-ion-ios-cart-outline"
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, inventore?"
+    #   # feature item loop
+    # - title: "Easy Pricing"
+    #   icon: "tf-ion-ios-cart-outline"
+    #   content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, inventore?"
 
 ############################# promo ############################
 promo:
