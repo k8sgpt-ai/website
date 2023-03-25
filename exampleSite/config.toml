@@ -62,10 +62,10 @@ weight = 2
 # url = "testimonial"
 # weight = 4
 
-# [[menu.main]]
-# name = "Contact"
-# url = "contact/"
-# weight = 5
+[[menu.main]]
+name = "Contact"
+url = "contact/"
+weight = 5
 
 # # footer menu
 # [[menu.footer]]
@@ -99,7 +99,7 @@ author = "Alex Jones"
 # currency
 currency = "$"
 # contact form action
-contact_form_action = "#" # contact form works with https://formspree.io
+contact_form_action = "https://formspree.io/f/mpzejbbd" # contact form works with https://formspree.io
 
 # Preloader
 [params.preloader]
