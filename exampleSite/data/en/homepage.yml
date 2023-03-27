@@ -63,7 +63,7 @@ about_product:
   title: "Work smart, not hard"
   items:
     # about product item loop
-    - image: "images/demo1.gif"
+    - image: "images/demo4.gif"
       title: "Codified SRE knowledge knows what to search for"
       content:
         "We have created analyzers that search your Kubernetes cluster for common problems and issues. These analyzers are based on SRE experience and are constantly being updated to keep up with the latest Kubernetes releases."

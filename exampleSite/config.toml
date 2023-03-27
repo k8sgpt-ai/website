@@ -1,7 +1,7 @@
 ################################### Default Configuration ############################
 baseurl = "https://demo.gethugothemes.com/vex/examplesite/"
 title = "K8sGPT"
-theme = "vex-hugo"
+theme = "website"
 # post excert
 summarylength = "20"
 # google analytics
