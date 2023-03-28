@@ -6,8 +6,8 @@ banner:
   image: "images/landing.png"
   button:
     enable: true
-    label: "Coming soon..."
-    link: ""
+    label: "Get it now!"
+    link: "https://github.com/k8sgpt-ai/k8sgpt"
 
 ############################# Feature ############################
 features:
