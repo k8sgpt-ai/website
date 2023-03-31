@@ -73,7 +73,7 @@ about_product:
         link: "#/"
 
     # about product item loop
-    - image: "images/demo3.gif"
+    - image: "images/filter.gif"
       title: "AI cuts through the noise"
       content:
         "Our ambition is to support multiple AI powered backends. These serve as guides amid the noise of your cluster. They help you to focus on the most relevant information."
