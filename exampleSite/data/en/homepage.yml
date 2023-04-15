@@ -1,9 +1,9 @@
 ############################# banner ############################
 banner:
   enable: true
-  title: "K8sGPT gives Kubernetes SRE superpowers to everyone"
+  title: "K8sGPT gives Kubernetes Superpowers to everyone"
   content: "k8sgpt is a tool for scanning your kubernetes clusters, diagnosing and triaging issues in simple english. It has SRE experience codified into it's analyzers and helps to pull out the most relevant information to enrich it with AI."
-  image: "images/landing.png"
+  image: "images/demo5.gif"
   button:
     enable: true
     label: "Get it now!"
@@ -25,7 +25,7 @@ features:
       # feature item loop
     - title: "Humans"
       icon: "tf-ion-ios-body-outline"
-      content: "Designed to convert complex signals into easy to understand suggestions."
+      content: "Complex signals into easy to understand suggestions."
 
     #   # feature item loop
     # - title: "Easy Pricing"
@@ -40,9 +40,9 @@ features:
       content: "Look at your cluster a glance or use AI to analyze your cluster in depth."
 
       # feature item loop
-    - title: "Observing without impact"
+    - title: "Security CVE review"
       icon: "tf-ion-ios-bookmarks-outline"
-      content: "K8sGPT does not make any changes to your cluster. It is a read-only tool."
+      content: "Connect to scanners like Trivy and triage issues."
 
     #   # feature item loop
     # - title: "Easy Pricing"
