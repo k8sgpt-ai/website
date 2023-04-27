@@ -105,3 +105,7 @@ testimonial:
       designation: "Senior SWE, Google"
       image: "images/bart.jpg"
       content: " This can save, the support teams tons of hours, so they can focus on more complex problems and automation."
+    - name: "Anton Smith"
+      designation: "Head Of Product, Spectro Cloud"
+      image: "images/anton.jpg"
+      content: "We're super excited about the promise of k8sgpt + our new OSS project LocalAI which lets anyone run local models. Combining k8sgpt with LocalAI is like a match made in heaven."
