@@ -4,7 +4,7 @@
 
 ```
 # cd in the project directory
-$ cd website/exampleSite/
+$ cd website/site/
 
 # Start local dev server
 $ hugo server --themesDir ../..
