@@ -3,7 +3,7 @@ title: "K8sGPT and Backstage - even better together!"
 date: 2023-05-06T16:22:16+06:00
 image: "https://github-production-user-asset-6210df.s3.amazonaws.com/11465610/243298043-24591cc2-1290-4a3b-bf91-4d6e5b1a89cf.png"
 description : "K8sGPT gives K8s Superpowers to everyone, with Backstage directly to the service owners"
-draft: true
+draft: false
 ---
 
 K8sGPT helps us to analyze current problems in the K8s cluster and with the help of AI it explains what the problem is and how it could be fixed.
