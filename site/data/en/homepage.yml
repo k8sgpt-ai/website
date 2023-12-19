@@ -1,9 +1,9 @@
 ############################# banner ############################
 banner:
   enable: true
-  title: "K8sGPT gives Kubernetes Superpowers to everyone"
-  content: "k8sgpt is a tool for scanning your kubernetes clusters, diagnosing and triaging issues in simple english. It has SRE experience codified into its analyzers and helps to pull out the most relevant information to enrich it with AI."
-  image: "images/demo5.gif"
+  title: "K8sGPT joins the CNCF Sandbox"
+  content: "K8sGPT is a tool for scanning your kubernetes clusters, diagnosing and triaging issues in simple english. It has SRE experience codified into its analyzers and helps to pull out the most relevant information to enrich it with AI."
+  image: "images/cncf.png"
   button:
     enable: true
     label: "Get it now!"
