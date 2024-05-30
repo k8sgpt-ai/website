@@ -1,18 +1,19 @@
 ---
-title: "Terms & Conditions"
+title: "Conditions générales d'utilisation"
 description : "this is a meta description"
 draft: false
 ---
 
-Please read this terms and conditions stated below, which outline a lot of legal goodies, but the bottom line is it’s our aim to always take care of both of us, as a customer, or as a seller. We’ve included many of these terms to legally protect ourselves, but if you have an issue, always feel free to email us at contact@themefisher.com and we’ll do our best to resolve it in a fair and timely way .
+Veuillez lire les termes et conditions ci-dessous, qui décrivent un grand nombre d'aspects juridiques, mais l'essentiel est que notre objectif est de toujours prendre soin de nous deux, en tant que client ou en tant que vendeur. Nous avons inclus beaucoup de ces conditions pour nous protéger légalement, mais si vous avez un problème, n'hésitez pas à nous envoyer un email à contact@themefisher.com et nous ferons de notre mieux pour le résoudre de manière équitable et rapide.
 
-### Product Buy & delivery policy
+### Politique d'achat et de livraison des produits
 
-1)All payments are processed securely through PayPal or Stripe. Themefisher does not directly process payments through the website. So any kind of Problem if you face Themefisher will Not Take any responsibility.
+1)Tous les paiements sont traités de manière sécurisée par PayPal ou Stripe. Themefisher ne traite pas directement les paiements sur le site. Ainsi, si vous rencontrez un problème, Themefisher n'en sera pas responsable.
 
-### Product Buy & delivery policy
+### Politique d'achat et de livraison des produits
 
-Please read this terms and conditions stated below, which outline a lot of legal goodies, but the bottom line is it’s our aim to always take care of both of us, as a customer, or as a seller. We’ve included many of these terms to legally protect ourselves, but if you have an issue, always feel free to email us at contact@themefisher.com and we’ll do our best to resolve it in a fair and timely way .
+Veuillez lire les termes et conditions ci-dessous, qui décrivent un grand nombre de points juridiques, mais l'essentiel est que notre objectif est de toujours prendre soin de nous deux, en tant que client ou en tant que vendeur. Nous avons inclus beaucoup de ces conditions pour nous protéger légalement, mais si vous avez un problème, n'hésitez pas à nous envoyer un email à contact@themefisher.com et nous ferons de notre mieux pour le résoudre de manière équitable et rapide.
+
 
 ### Refund Policy
 

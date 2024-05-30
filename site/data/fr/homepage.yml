@@ -1,122 +1,111 @@
 ############################# banner ############################
 banner:
   enable: true
-  title: "K8sGPT, gives Kubernetes SRE superpowers to everyone"
-  content: "k8sgpt is a tool for scanning your kubernetes clusters, diagnosing and triaging issues in simple english. It has SRE experience codified into it's analyzers and helps to pull out the most relevent information to enrich it with AI."
-  image: "images/cli.png"
+  title: "K8sGPT rejoint le bac à sable de la CNCF"
+  content: "K8sGPT est un outil pour scanner vos clusters kubernetes, diagnostiquer et trier les problèmes en anglais simple. Il dispose d'une expérience SRE codifiée dans ses analyseurs et aide à extraire les informations les plus pertinentes pour les enrichir avec de l'IA."
+  image: "images/cncf.png"
   button:
     enable: true
-    label: "Get started"
+    label: "Obtenez-le maintenant!"
     link: "https://github.com/k8sgpt-ai/k8sgpt"
 
 ############################# Feature ############################
 features:
-  enable: false
-  title: "Our Core Features"
-  image: "images/watch-2.png"
+  enable: true
+  title: "K8sGPT est pour..."
+  image: "images/logo-black.png"
 
   # feature at the left of the image
   left_side:
     # feature item loop
-    - title: "Smooth Touch"
-      icon: "tf-ion-ios-alarm-outline"
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, inventore?"
-
-      # feature item loop
-    - title: "Elegant Design"
+    - title: "Analyse de la charge de travail"
       icon: "tf-ion-ios-bell-outline"
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, inventore?"
+      content: "Trouvez les problèmes critiques liés à vos charges de travail."
 
       # feature item loop
-    - title: "Easy Pricing"
-      icon: "tf-ion-ios-cart-outline"
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, inventore?"
+    - title: "Humains"
+      icon: "tf-ion-ios-body-outline"
+      content: "Les signaux complexes sont transformés en suggestions faciles à comprendre."
+
+    #   # feature item loop
+    # - title: "Easy Pricing"
+    #   icon: "tf-ion-ios-cart-outline"
+    #   content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, inventore?"
 
   # feature at the right of the image
   right_side:
     # feature item loop
-    - title: "Smooth Touch"
+    - title: "Triage rapide, analyse par l'IA"
       icon: "tf-ion-ios-alarm-outline"
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, inventore?"
+      content: "Examinez votre cluster d'un coup d'œil ou utilisez l'IA pour l'analyser en profondeur."
 
       # feature item loop
-    - title: "Elegant Design"
-      icon: "tf-ion-ios-bell-outline"
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, inventore?"
+    - title: "Examen de la sécurité CVE"
+      icon: "tf-ion-ios-bookmarks-outline"
+      content: "Se connecter à des scanners tels que Trivy et trier les problèmes."
 
-      # feature item loop
-    - title: "Easy Pricing"
-      icon: "tf-ion-ios-cart-outline"
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, inventore?"
+    #   # feature item loop
+    # - title: "Easy Pricing"
+    #   icon: "tf-ion-ios-cart-outline"
+    #   content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, inventore?"
 
 ############################# promo ############################
 promo:
-  enable: false
-  image: "images/watch.png"
-  title: "Designed by professional , the benefit for creative gigs"
+  enable: true
+  image: "images/kubernetes.svg"
+  title: "Fonctionne sur tous les clusters Kubernetes conformes à la CNCF."
   content:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia vel labore, deleniti minima
-    nisi, velit atque quaerat impedit ea maxime sunt accusamus at obcaecati dolor iure iusto omnis quis eum.
-    <br><br>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis commodi odit, illo, qui aliquam dol"
+    "Nous voulons que k8sgpt reste adapté aux dernières versions de Kubernetes. Nous le testons sur tous les clusters Kubernetes conformes à la CNCF jusqu'aux versions N-2."
 
 ############################# About Product #######################
 about_product:
   enable: true
-  title: "Work smart not hard"
+  title: "Travailler intelligemment, pas durement"
   items:
     # about product item loop
-    - image: "images/demo1.gif"
-      title: "Codified SRE knowledge knows what to search for"
+    - image: "images/demo4.gif"
+      title: "Les connaissances codifiées du SRE permettent de savoir ce qu'il faut rechercher"
       content:
-        "We have created analyzers that search your Kubernetes cluster for common problems and issues. These analyzers are based on SRE experience and are constantly being updated to keep up with the latest Kubernetes releases."
+        "Nous avons créé des analyseurs qui recherchent les problèmes courants dans votre cluster Kubernetes. Ces analyseurs sont basés sur l'expérience de SRE et sont constamment mis à jour pour suivre les dernières versions de Kubernetes."
       button:
         enable: false
-        label: "Check Features"
+        label: "Vérifier les caractéristiques"
         link: "#/"
 
     # about product item loop
-    - image: "images/demo2.gif"
-      title: "AI cuts through the noise"
+    - image: "images/filter.gif"
+      title: "L'IA fait la différence"
       content:
-        "Our ambition is to support multiple AI powered backends. These serve as guides amid the noise of your cluster. They help you to focus on the most relevant information."
+        "Notre ambition est de prendre en charge plusieurs backends alimentés par l'IA. Ceux-ci servent de guides au milieu du bruit de votre cluster. Ils vous aident à vous concentrer sur les informations les plus pertinentes."
       button:
         enable: false
-        label: "Check Features"
+        label: "Vérifier les caractéristiques"
         link: "#/"
 
 #################################### Products ########################
 products:
   enable: false
-  title: "Checkout Our All Products"
+  title: "Voir tous nos produits"
 
 ################################## Subscription ###################
 subscription:
   enable: false
-  bg_image: "images/call-to-action.jpg"
-  title: "Get Product Updates"
-  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
-  placeholder: "Your Email Address Here"
+  bg_image: "images/call-to-action-2.jpg"
+  title: "En savoir plus sur K8sGPT"
+  content: "Rejoignez notre liste de diffusion et nous vous tiendrons au courant des événements importants."
+  placeholder: "Votre adresse e-mail ici"
 
 ############################## Testimonial ##########################
 testimonial:
-  enable: false
-  title: "Watch Review"
+  enable: true
+  title: "Impressions"
   testimonial_item:
     # testimonial item loop
-    - name: "Jonathon Andrew"
-      designation: "CEO, Themefisher"
-      image: "images/avater.png"
-      content: "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents."
-
-    # testimonial item loop
-    - name: "Jonathon Andrew"
-      designation: "CEO, Themefisher"
-      image: "images/avater.png"
-      content: "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents."
-
-    # testimonial item loop
-    - name: "Jonathon Andrew"
-      designation: "CEO, Themefisher"
-      image: "images/avater.png"
-      content: "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents."
+    - name: "Bartłomiej Płotka"
+      designation: "Senior SWE, Google"
+      image: "images/bart.jpg"
+      content: "Les équipes d'assistance peuvent ainsi économiser des tonnes d'heures, ce qui leur permet de se concentrer sur des problèmes plus complexes et sur l'automatisation."
+    - name: "Anton Smith"
+      designation: "Chef de produit, Spectro Cloud"
+      image: "images/anton.jpg"
+      content: "Nous sommes très enthousiastes quant à la promesse de k8sgpt + notre nouveau projet OSS LocalAI qui permet à n'importe qui d'exécuter des modèles locaux. La combinaison de k8sgpt et de LocalAI est comme un mariage parfait."
