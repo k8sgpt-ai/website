@@ -55,7 +55,7 @@ promo:
   image: "images/kubernetes.svg"
   title: "Works on all CNCF conformant Kubernetes clusters"
   content:
-    "We want k8sgpt to stay relevant to the latest Kubernetes releases. We test it on all CNCF conformant Kubernetes clusters upto N-2 releases."
+    "We want k8sgpt to stay relevant to the latest Kubernetes releases. We test it on all CNCF conformant Kubernetes clusters up to N-2 releases."
 
 ############################# About Product #######################
 about_product:
