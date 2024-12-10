@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Our Latest Post on K8sGPT</title>
+    <link>http://localhost:1313/vex/examplesite/blog/</link>
+    <description>Recent content in Our Latest Post on K8sGPT</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 10 Dec 2024 12:00:00 +0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/vex/examplesite/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interplex Release Merged into K8sGPT Operator</title>
+      <link>http://localhost:1313/vex/examplesite/blog/post-8/</link>
+      <pubDate>Tue, 10 Dec 2024 12:00:00 +0600</pubDate>
+      <guid>http://localhost:1313/vex/examplesite/blog/post-8/</guid>
+      <description>&lt;p&gt;The &lt;a href=&#34;https://github.com/k8sgpt-ai/k8sgpt-operator/releases/tag/v0.2.4&#34;&gt;v0.2.4 release&lt;/a&gt; of the K8sGPT Operator marks a significant milestone with the integration of &lt;a href=&#34;https://github.com/interplex-ai/interplex&#34;&gt;Interplex&lt;/a&gt;, a high-performance Rust-based cache designed for embeddings. This update reflects the project&amp;rsquo;s continued commitment to leveraging cutting-edge technologies to elevate Kubernetes and AI interactions.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>K8sGPT joins the Cloud Native Computing Foundation</title>
+      <link>http://localhost:1313/vex/examplesite/blog/post-7/</link>
+      <pubDate>Tue, 19 Dec 2023 12:05:16 +0600</pubDate>
+      <guid>http://localhost:1313/vex/examplesite/blog/post-7/</guid>
+      <description>&lt;p&gt;With the &lt;a href=&#34;https://github.com/cncf/sandbox/issues/38#issuecomment-1862551641&#34;&gt;voting&lt;/a&gt; only just closed, it is a phenomenal moment for the K8sGPT project to be voted into the CNCF.&#xA;As the first Artificial Intelligence and Kubernetes tool that has been accepted, there is a responsibility but equally an incredible opportunity to pave the way for others.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Run k8sgpt with Local LLM</title>
+      <link>http://localhost:1313/vex/examplesite/blog/post-6/</link>
+      <pubDate>Thu, 14 Sep 2023 12:05:16 +0600</pubDate>
+      <guid>http://localhost:1313/vex/examplesite/blog/post-6/</guid>
+      <description>&lt;p&gt;For some cases, you may need on-premise LLM(Large Language Model) deployment instead of OpenAI: to leverage existing GPU, or to ensure total data ownership, or use your fine-tune models.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>K8sGPT and Backstage - even better together!</title>
+      <link>http://localhost:1313/vex/examplesite/blog/post-5/</link>
+      <pubDate>Sat, 06 May 2023 16:22:16 +0600</pubDate>
+      <guid>http://localhost:1313/vex/examplesite/blog/post-5/</guid>
+      <description>&lt;p&gt;K8sGPT helps us to analyze current problems in the K8s cluster and with the help of AI it explains what the problem is and how it could be fixed.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A comprehensive tutorial</title>
+      <link>http://localhost:1313/vex/examplesite/blog/post-4/</link>
+      <pubDate>Fri, 05 May 2023 20:22:16 +0600</pubDate>
+      <guid>http://localhost:1313/vex/examplesite/blog/post-4/</guid>
+      <description>&lt;p&gt;A brilliant new tutorial from Anaïs shows everyone how to get started.&lt;/p&gt;&#xA;&lt;p&gt;In this tutorial, Anaïs shows us how to get started with K8sGPT. She walks us through the installation process and how to use the tool. She also shows us how to use the &lt;code&gt;--explain&lt;/code&gt; command to get more information about the output of the analyzers.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Analyzers, Anonymizers, and CVE Scanner</title>
+      <link>http://localhost:1313/vex/examplesite/blog/post-3/</link>
+      <pubDate>Tue, 04 Apr 2023 20:22:16 +0600</pubDate>
+      <guid>http://localhost:1313/vex/examplesite/blog/post-3/</guid>
+      <description>&lt;p&gt;As we close our first month of open source, we&amp;rsquo;re excited to announce the release of four new analyzers, a new anonymizer and a CVE scanner.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Early access</title>
+      <link>http://localhost:1313/vex/examplesite/blog/post-2/</link>
+      <pubDate>Tue, 28 Mar 2023 20:22:16 +0600</pubDate>
+      <guid>http://localhost:1313/vex/examplesite/blog/post-2/</guid>
+      <description>&lt;p&gt;Today was a rollercoaster for myself and the other collaborators on the K8sGPT project.&#xA;We saw 10,000 page views, 7500 unique visitors, 250 mail subscribers and 100+ github stars in the first 24 hours of the project being open sourced.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Convergence of Kubernetes &amp; AI.</title>
+      <link>http://localhost:1313/vex/examplesite/blog/post-1/</link>
+      <pubDate>Fri, 24 Mar 2023 20:22:16 +0600</pubDate>
+      <guid>http://localhost:1313/vex/examplesite/blog/post-1/</guid>
+      <description>&lt;p&gt;The utility provided by easy access to LLM ( Large language models ) has already driven leaps of innovation in months not years. We&amp;rsquo;re witnessing new markets, new products, and new services being created at a pace that would have been unimaginable just a few years ago.&#xA;Within five years we&amp;rsquo;ll see costs drop significantly as models are matured and sold at decreasing prices, enabling further access to high quality AI services.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
