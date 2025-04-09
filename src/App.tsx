@@ -1,9 +1,11 @@
-import { BeakerIcon, ShieldCheckIcon, CloudIcon, CpuChipIcon, UserGroupIcon, CalendarIcon, BuildingOfficeIcon, AdjustmentsHorizontalIcon, MagnifyingGlassIcon, ListBulletIcon } from '@heroicons/react/24/outline'
+import { BeakerIcon, ShieldCheckIcon, CloudIcon, CpuChipIcon, UserGroupIcon, CalendarIcon, BuildingOfficeIcon, AdjustmentsHorizontalIcon, MagnifyingGlassIcon, ListBulletIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useState } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom'
 
 function App() {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -33,23 +35,63 @@ function App() {
       </div>
 
       {/* Navigation */}
-      <nav className="bg-white shadow-sm">
+      <nav className="bg-white shadow-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
+            {/* Logo Section */}
             <div className="flex items-center">
               <Link to="/" className="flex items-center">
-                <img src="/images/k8sgpt-icon.svg" alt="K8sGPT Icon" className="h-8 w-8" />
-                <span className="ml-2 text-xl font-bold">K8sGPT</span>
+                <img src="/images/k8sgpt-icon.svg" alt="K8sGPT Icon" className="h-8 w-auto" />
+                <span className="ml-2 text-xl font-bold hidden sm:inline">K8sGPT</span>
               </Link>
             </div>
-            <div className="flex items-center space-x-4">
-              <a href="/#features" className="text-gray-600 hover:text-gray-900">Features</a>
-              <a href="/#providers" className="text-gray-600 hover:text-gray-900">AI Providers</a>
-              <a href="/#adopters" className="text-gray-600 hover:text-gray-900">Adopters</a>
-              <a href="/#guardrails" className="text-gray-600 hover:text-gray-900">Guardrails</a>
-              <a href="/#community" className="text-gray-600 hover:text-gray-900">Community</a>
-              <Link to="/docs" className="text-gray-600 hover:text-gray-900">Documentation</Link>
-              <Link to="/docs/getting-started/installation" className="bg-primary text-white px-4 py-2 rounded-md hover:bg-secondary">
+
+            {/* Desktop Links - Hidden on Mobile */}
+            <div className="hidden sm:flex sm:items-center sm:space-x-4">
+              <a href="/#features" className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Features</a>
+              <a href="/#providers" className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">AI Providers</a>
+              <a href="/#adopters" className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Adopters</a>
+              <a href="/#guardrails" className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Guardrails</a>
+              <a href="/#community" className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Community</a>
+              <Link to="/docs" className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Documentation</Link>
+              <Link to="/docs/getting-started/installation" className="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-secondary">
+                Get Started
+              </Link>
+            </div>
+
+            {/* Mobile Menu Button - Hidden on Desktop */}
+            <div className="-mr-2 flex items-center sm:hidden">
+              <button 
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                type="button" 
+                className="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
+                aria-controls="mobile-menu" 
+                aria-expanded={isMobileMenuOpen}
+              >
+                <span className="sr-only">Open main menu</span>
+                {isMobileMenuOpen ? (
+                  <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                ) : (
+                  <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Menu - Shown when isMobileMenuOpen is true */}
+        <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} sm:hidden`} id="mobile-menu">
+          <div className="px-2 pt-2 pb-3 space-y-1">
+            <a href="/#features" className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Features</a>
+            <a href="/#providers" className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">AI Providers</a>
+            <a href="/#adopters" className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Adopters</a>
+            <a href="/#guardrails" className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Guardrails</a>
+            <a href="/#community" className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Community</a>
+            <Link to="/docs" className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Documentation</Link>
+          </div>
+          <div className="pt-4 pb-3 border-t border-gray-200">
+            <div className="px-2">
+              <Link to="/docs/getting-started/installation" className="block w-full text-center bg-primary text-white px-4 py-2 rounded-md text-base font-medium hover:bg-secondary">
                 Get Started
               </Link>
             </div>
