@@ -7,8 +7,7 @@ import {
   ServerIcon, 
   BeakerIcon,
   CircleStackIcon,
-  CloudIcon,
-  BuildingOfficeIcon
+  CloudIcon
 } from '@heroicons/react/24/outline';
 
 const Installation: React.FC = () => {

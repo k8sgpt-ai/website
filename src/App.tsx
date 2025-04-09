@@ -1,4 +1,4 @@
-import { BeakerIcon, CommandLineIcon, CubeIcon, ShieldCheckIcon, CloudIcon, CpuChipIcon, UserGroupIcon, CalendarIcon, ChatBubbleLeftRightIcon, BuildingOfficeIcon } from '@heroicons/react/24/outline'
+import { BeakerIcon, ShieldCheckIcon, CloudIcon, CpuChipIcon, UserGroupIcon, CalendarIcon, BuildingOfficeIcon } from '@heroicons/react/24/outline'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 
 function App() {

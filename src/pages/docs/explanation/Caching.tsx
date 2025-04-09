@@ -1,4 +1,3 @@
-import React from 'react';
 import DocPage from '../../../components/DocPage';
 
 const Caching = () => {
