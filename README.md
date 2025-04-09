@@ -82,9 +82,26 @@ This site is configured for deployment on Netlify. To deploy:
 3. Click "Add new site" > "Import an existing project"
 4. Connect to your Git provider and select the repository
 5. Configure the build settings:
-   - Build command: `npm run build`
+   - Build command: `npm run build:netlify`
    - Publish directory: `dist`
+   - Node version: 18.18.0 (set in `.node-version` file)
 6. Click "Deploy site"
+
+### Manual Deployment
+
+You can also deploy manually using the Netlify CLI:
+
+```bash
+# Install Netlify CLI
+npm install -g netlify-cli
+
+# Login to Netlify
+netlify login
+
+# Initialize and deploy
+netlify init
+netlify deploy --prod
+```
 
 ## License
 
