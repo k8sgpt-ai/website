@@ -43,11 +43,11 @@ function App() {
               </Link>
             </div>
             <div className="flex items-center space-x-4">
-              <a href="#features" className="text-gray-600 hover:text-gray-900">Features</a>
-              <a href="#providers" className="text-gray-600 hover:text-gray-900">AI Providers</a>
-              <a href="#adopters" className="text-gray-600 hover:text-gray-900">Adopters</a>
-              <a href="#security" className="text-gray-600 hover:text-gray-900">Security</a>
-              <a href="#community" className="text-gray-600 hover:text-gray-900">Community</a>
+              <a href="/#features" className="text-gray-600 hover:text-gray-900">Features</a>
+              <a href="/#providers" className="text-gray-600 hover:text-gray-900">AI Providers</a>
+              <a href="/#adopters" className="text-gray-600 hover:text-gray-900">Adopters</a>
+              <a href="/#security" className="text-gray-600 hover:text-gray-900">Security</a>
+              <a href="/#community" className="text-gray-600 hover:text-gray-900">Community</a>
               <Link to="/docs" className="text-gray-600 hover:text-gray-900">Documentation</Link>
               <Link to="/docs/getting-started/installation" className="bg-primary text-white px-4 py-2 rounded-md hover:bg-secondary">
                 Get Started
