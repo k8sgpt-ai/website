@@ -46,7 +46,7 @@ function App() {
               <a href="/#features" className="text-gray-600 hover:text-gray-900">Features</a>
               <a href="/#providers" className="text-gray-600 hover:text-gray-900">AI Providers</a>
               <a href="/#adopters" className="text-gray-600 hover:text-gray-900">Adopters</a>
-              <a href="/#security" className="text-gray-600 hover:text-gray-900">Security</a>
+              <a href="/#guardrails" className="text-gray-600 hover:text-gray-900">Guardrails</a>
               <a href="/#community" className="text-gray-600 hover:text-gray-900">Community</a>
               <Link to="/docs" className="text-gray-600 hover:text-gray-900">Documentation</Link>
               <Link to="/docs/getting-started/installation" className="bg-primary text-white px-4 py-2 rounded-md hover:bg-secondary">
@@ -194,7 +194,7 @@ function App() {
           </div>
 
           {/* Guardrails Section (Previously Security) */}
-          <div id="security" className="py-12 bg-white">
+          <div id="guardrails" className="py-12 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center">
                 <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
