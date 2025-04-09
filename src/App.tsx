@@ -2,6 +2,7 @@ import { BeakerIcon, ShieldCheckIcon, CloudIcon, CpuChipIcon, UserGroupIcon, Cal
 import { useState } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop';
+import AnimatedBackground from './components/AnimatedBackground';
 
 function App() {
   const location = useLocation();
@@ -12,6 +13,7 @@ function App() {
     <>
       <ScrollToTop />
       <div className="min-h-screen flex flex-col">
+        {isHomePage && <AnimatedBackground />}
         {/* Auto Remediation Banner */}
         <div className="bg-indigo-600">
           <div className="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
@@ -105,11 +107,12 @@ function App() {
         </nav>
 
         {/* Main Content Area */}
-        <main>
+        <main className="relative">
+          {isHomePage && <AnimatedBackground />}
           {isHomePage ? (
             <>
               {/* Hero Section */}
-              <div className="bg-white">
+              <div className="bg-white/90 backdrop-blur-sm shadow-sm border-b border-gray-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
                   <div className="text-center">
                     <img src="/images/k8sgpt-logo.png" alt="K8sGPT Logo" className="h-32 mx-auto mb-8" />
@@ -137,7 +140,7 @@ function App() {
               </div>
 
               {/* Features Section */}
-              <div id="features" className="py-12 bg-gray-50">
+              <div id="features" className="py-12 bg-gray-50/90 backdrop-blur-sm shadow-sm border-b border-gray-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                   <div className="text-center">
                     <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
@@ -179,7 +182,7 @@ function App() {
               </div>
 
               {/* AI Providers Section */}
-              <div id="providers" className="py-12 bg-white">
+              <div id="providers" className="py-12 bg-white/80 backdrop-blur-sm">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                   <div className="text-center">
                     <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
@@ -200,7 +203,7 @@ function App() {
               </div>
 
               {/* Adopters Section */}
-              <div id="adopters" className="py-12 bg-gray-50">
+              <div id="adopters" className="py-12 bg-gray-50/90 backdrop-blur-sm shadow-sm border-b border-gray-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                   <div className="text-center">
                     <div className="flex items-center justify-center space-x-2 mb-6">
@@ -243,7 +246,7 @@ function App() {
               </div>
 
               {/* Guardrails Section (Previously Security) */}
-              <div id="guardrails" className="py-12 bg-white">
+              <div id="guardrails" className="py-12 bg-white/90 backdrop-blur-sm shadow-sm border-b border-gray-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                   <div className="text-center">
                     <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
@@ -283,7 +286,7 @@ function App() {
               </div>
 
               {/* Community Section */}
-              <div id="community" className="py-12 bg-gray-50">
+              <div id="community" className="py-12 bg-gray-50/80 backdrop-blur-sm">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                   <div className="text-center">
                     <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
@@ -338,8 +341,8 @@ function App() {
                 </div>
               </div>
 
-              {/* K8sGPT in Action Section */}
-              <div id="videos" className="py-12 bg-gray-50">
+              {/* Community Videos Section */}
+              <div id="videos" className="py-12 bg-gray-50/90 backdrop-blur-sm shadow-sm border-b border-gray-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                   <div className="text-center">
                     <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
