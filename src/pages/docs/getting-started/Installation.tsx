@@ -1,156 +1,159 @@
 import React from 'react';
 import DocPage from '../../../components/DocPage';
+import ReactMarkdown from 'react-markdown';
+import { 
+  CommandLineIcon, 
+  CubeIcon, 
+  ServerIcon, 
+  BeakerIcon,
+  CircleStackIcon,
+  CloudIcon,
+  BuildingOfficeIcon
+} from '@heroicons/react/24/outline';
 
 const Installation: React.FC = () => {
-  return (
-    <DocPage
-      title="Installation"
-      description="Learn how to install K8sGPT using various methods including CLI, operator, and package managers."
-      prev={{ title: "Overview", href: "/docs/getting-started/overview" }}
-      next={{ title: "Configuration", href: "/docs/getting-started/configuration" }}
-    >
-      <section>
-        <h2>Installation Methods</h2>
-        <p>
-          K8sGPT can be installed in several ways depending on your needs:
-        </p>
-        <ul>
-          <li>CLI installation for local development and testing</li>
-          <li>Operator installation for Kubernetes clusters</li>
-          <li>Package manager installation for system-wide deployment</li>
-        </ul>
-      </section>
+  const markdownContent = `# Installation Methods
 
-      <section>
-        <h2>CLI Installation</h2>
-        <p>
-          The CLI tool is the simplest way to get started with K8sGPT. It can be installed
-          using various package managers or downloaded directly.
-        </p>
+Learn how to install K8sGPT using various methods including CLI, operator, and package managers.
 
-        <h3>Using Homebrew (macOS/Linux)</h3>
-        <pre>
-          <code>
-            {`brew tap k8sgpt-ai/tap
-brew install k8sgpt`}
-          </code>
-        </pre>
+## CLI Installation
 
-        <h3>Direct Download</h3>
-        <p>
-          Download the latest release for your platform from the GitHub releases page:
-        </p>
-        <pre>
-          <code>
-            {`# For Linux
-curl -LO https://github.com/k8sgpt-ai/k8sgpt/releases/latest/download/k8sgpt-linux-amd64
-chmod +x k8sgpt-linux-amd64
-sudo mv k8sgpt-linux-amd64 /usr/local/bin/k8sgpt
+The simplest way to get started with K8sGPT is using the CLI installation method.
 
-# For macOS
-curl -LO https://github.com/k8sgpt-ai/k8sgpt/releases/latest/download/k8sgpt-darwin-amd64
-chmod +x k8sgpt-darwin-amd64
-sudo mv k8sgpt-darwin-amd64 /usr/local/bin/k8sgpt`}
-          </code>
-        </pre>
-      </section>
+\`\`\`bash
+# Using curl
+curl -LO https://github.com/k8sgpt-ai/k8sgpt/releases/latest/download/k8sgpt_Linux_x86_64.tar.gz
+tar -xzf k8sgpt_Linux_x86_64.tar.gz
+sudo mv k8sgpt /usr/local/bin/
 
-      <section>
-        <h2>Operator Installation</h2>
-        <p>
-          For production use in Kubernetes clusters, we recommend using the K8sGPT operator.
-          It can be installed using Helm:
-        </p>
-        <pre>
-          <code>
-            {`# Add the Helm repository
-helm repo add k8sgpt https://charts.k8sgpt.ai
-helm repo update
+# Using wget
+wget https://github.com/k8sgpt-ai/k8sgpt/releases/latest/download/k8sgpt_Linux_x86_64.tar.gz
+tar -xzf k8sgpt_Linux_x86_64.tar.gz
+sudo mv k8sgpt /usr/local/bin/
+\`\`\`
 
+## Operator Installation
+
+For Kubernetes-native installation, use the K8sGPT operator.
+
+\`\`\`bash
 # Install the operator
-helm install k8sgpt k8sgpt/k8sgpt-operator`}
-          </code>
-        </pre>
-      </section>
+kubectl apply -f https://raw.githubusercontent.com/k8sgpt-ai/k8sgpt-operator/main/deploy/crds/k8sgpt.ai_v1alpha1_k8sgpt_cr.yaml
+kubectl apply -f https://raw.githubusercontent.com/k8sgpt-ai/k8sgpt-operator/main/deploy/operator.yaml
 
-      <section>
-        <h2>Package Manager Installation</h2>
-        <p>
-          K8sGPT is available in various package managers for easy installation:
-        </p>
+# Create a K8sGPT instance
+kubectl apply -f https://raw.githubusercontent.com/k8sgpt-ai/k8sgpt-operator/main/deploy/crds/k8sgpt.ai_v1alpha1_k8sgpt_cr.yaml
+\`\`\`
 
-        <h3>APT (Debian/Ubuntu)</h3>
-        <pre>
-          <code>
-            {`# Add the repository
-curl -fsSL https://packages.k8sgpt.ai/gpg | sudo gpg --dearmor -o /usr/share/keyrings/k8sgpt-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/k8sgpt-archive-keyring.gpg] https://packages.k8sgpt.ai/apt stable main" | sudo tee /etc/apt/sources.list.d/k8sgpt.list
+## Package Manager Installation
+
+### Homebrew (macOS)
+
+\`\`\`bash
+brew tap k8sgpt-ai/tap
+brew install k8sgpt
+\`\`\`
+
+### APT (Debian/Ubuntu)
+
+\`\`\`bash
+# Add the repository
+curl -fsSL https://download.opensuse.org/repositories/home:/k8sgpt-ai:/stable/xUbuntu_22.04/Release.key | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/k8sgpt.gpg
+echo "deb https://download.opensuse.org/repositories/home:/k8sgpt-ai:/stable/xUbuntu_22.04/ /" | sudo tee /etc/apt/sources.list.d/k8sgpt.list
 
 # Install K8sGPT
 sudo apt update
-sudo apt install k8sgpt`}
-          </code>
-        </pre>
+sudo apt install k8sgpt
+\`\`\`
 
-        <h3>RPM (RHEL/CentOS/Fedora)</h3>
-        <pre>
-          <code>
-            {`# Add the repository
-sudo dnf install https://packages.k8sgpt.ai/rpm/k8sgpt-release.rpm
+### YUM/DNF (RHEL/CentOS)
+
+\`\`\`bash
+# Add the repository
+curl -fsSL https://download.opensuse.org/repositories/home:/k8sgpt-ai:/stable/RHEL_8/Release.key | sudo gpg --dearmor -o /etc/pki/rpm-gpg/RPM-GPG-KEY-k8sgpt
+echo "[k8sgpt]
+name=K8sGPT Repository
+baseurl=https://download.opensuse.org/repositories/home:/k8sgpt-ai:/stable/RHEL_8/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-k8sgpt" | sudo tee /etc/yum.repos.d/k8sgpt.repo
 
 # Install K8sGPT
-sudo dnf install k8sgpt`}
-          </code>
-        </pre>
-      </section>
+sudo dnf install k8sgpt
+\`\`\`
 
-      <section>
-        <h2>Docker Installation</h2>
-        <p>
-          You can also run K8sGPT using Docker:
-        </p>
-        <pre>
-          <code>
-            {`# Pull the image
-docker pull k8sgpt/k8sgpt:latest
+## Docker Installation
 
-# Run K8sGPT
-docker run -it --rm \\
-  -v ~/.kube/config:/root/.kube/config:ro \\
-  -v ~/.config/k8sgpt:/root/.config/k8sgpt \\
-  k8sgpt/k8sgpt:latest analyze`}
-          </code>
-        </pre>
-      </section>
+You can also run K8sGPT using Docker.
 
-      <section>
-        <h2>Verifying Installation</h2>
-        <p>
-          After installation, verify that K8sGPT is working correctly:
-        </p>
-        <pre>
-          <code>
-            {`# Check version
+\`\`\`bash
+docker run -it --rm -v ~/.kube:/root/.kube k8sgpt/k8sgpt:latest
+\`\`\`
+
+## Verifying Installation
+
+After installation, verify that K8sGPT is working correctly:
+
+\`\`\`bash
 k8sgpt version
+\`\`\`
 
-# Run analysis
-k8sgpt analyze`}
-          </code>
-        </pre>
-      </section>
+## Next Steps
 
-      <section>
-        <h2>Next Steps</h2>
-        <p>
-          After installing K8sGPT, you should:
-        </p>
-        <ul>
-          <li>Configure your AI provider credentials</li>
-          <li>Set up filters and analyzers</li>
-          <li>Configure output formats and integrations</li>
-          <li>Review the configuration documentation for advanced settings</li>
-        </ul>
-      </section>
+Now that you have K8sGPT installed, you can:
+
+1. Configure your AI backend
+2. Run your first analysis
+3. Set up auto-remediation
+4. Explore advanced features
+
+Check out our [configuration guide](/docs/configuration) to get started.`;
+
+  return (
+    <DocPage
+      title="Installation"
+      prev={{ title: "Overview", href: "/docs/getting-started/overview" }}
+      next={{ title: "Configuration", href: "/docs/getting-started/configuration" }}
+    >
+      <div className="flex flex-col space-y-8">
+        <div className="flex items-center space-x-2">
+          <CommandLineIcon className="h-6 w-6 text-indigo-600" />
+          <h1 className="text-3xl font-bold text-gray-900">Installation Methods</h1>
+        </div>
+        
+        <ReactMarkdown
+          components={{
+            h2: ({node, children, ...props}) => {
+              const title = React.Children.toArray(children)[0] as string;
+              return (
+                <div className="flex items-center space-x-2 mt-8 mb-4">
+                  {title === 'CLI Installation' && <CommandLineIcon className="h-5 w-5 text-indigo-600" />}
+                  {title === 'Operator Installation' && <CubeIcon className="h-5 w-5 text-indigo-600" />}
+                  {title === 'Package Manager Installation' && <ServerIcon className="h-5 w-5 text-indigo-600" />}
+                  {title === 'Docker Installation' && <CloudIcon className="h-5 w-5 text-indigo-600" />}
+                  {title === 'Verifying Installation' && <BeakerIcon className="h-5 w-5 text-indigo-600" />}
+                  {title === 'Next Steps' && <CircleStackIcon className="h-5 w-5 text-indigo-600" />}
+                  <h2 className="text-2xl font-bold text-gray-800" {...props}>{children}</h2>
+                </div>
+              );
+            },
+            h3: ({node, children, ...props}) => {
+              const title = React.Children.toArray(children)[0] as string;
+              return (
+                <div className="flex items-center space-x-2 mt-6 mb-3">
+                  {title === 'Using Homebrew (macOS/Linux)' && <CommandLineIcon className="h-4 w-4 text-indigo-600" />}
+                  {title === 'Direct Download' && <CommandLineIcon className="h-4 w-4 text-indigo-600" />}
+                  {title === 'APT (Debian/Ubuntu)' && <ServerIcon className="h-4 w-4 text-indigo-600" />}
+                  {title === 'RPM (RHEL/CentOS/Fedora)' && <ServerIcon className="h-4 w-4 text-indigo-600" />}
+                  <h3 className="text-xl font-bold text-gray-700" {...props}>{children}</h3>
+                </div>
+              );
+            },
+          }}
+        >
+          {markdownContent.replace('# Installation Methods\n\n', '')}
+        </ReactMarkdown>
+      </div>
     </DocPage>
   );
 };

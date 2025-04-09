@@ -57,7 +57,17 @@ const DocPage: React.FC<DocPageProps> = ({ title, description, children, prev, n
       {/* Content */}
       <div className="mx-auto max-w-7xl px-6 lg:px-8 py-12">
         <div className="mx-auto max-w-4xl">
-          <div className="prose prose-lg prose-indigo max-w-none">
+          <div className="prose prose-lg prose-indigo max-w-none
+            prose-headings:font-bold prose-headings:tracking-tight
+            prose-h1:text-3xl prose-h1:text-gray-900
+            prose-h2:text-2xl prose-h2:text-gray-800 prose-h2:mt-8 prose-h2:mb-4
+            prose-h3:text-xl prose-h3:text-gray-700 prose-h3:mt-6 prose-h3:mb-3
+            prose-p:text-gray-600 prose-p:leading-7
+            prose-code:text-indigo-600 prose-code:bg-indigo-50 prose-code:px-1 prose-code:py-0.5 prose-code:rounded
+            prose-pre:bg-gray-900 prose-pre:text-gray-100
+            prose-strong:text-gray-900 prose-strong:font-semibold
+            prose-ul:list-disc prose-ul:pl-6
+            prose-li:text-gray-600">
             {children}
           </div>
         </div>

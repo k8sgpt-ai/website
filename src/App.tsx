@@ -1,4 +1,4 @@
-import { BeakerIcon, CommandLineIcon, CubeIcon, ShieldCheckIcon, CloudIcon, CpuChipIcon, UserGroupIcon, CalendarIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline'
+import { BeakerIcon, CommandLineIcon, CubeIcon, ShieldCheckIcon, CloudIcon, CpuChipIcon, UserGroupIcon, CalendarIcon, ChatBubbleLeftRightIcon, BuildingOfficeIcon } from '@heroicons/react/24/outline'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 
 function App() {
@@ -45,6 +45,7 @@ function App() {
             <div className="flex items-center space-x-4">
               <a href="#features" className="text-gray-600 hover:text-gray-900">Features</a>
               <a href="#providers" className="text-gray-600 hover:text-gray-900">AI Providers</a>
+              <a href="#adopters" className="text-gray-600 hover:text-gray-900">Adopters</a>
               <a href="#security" className="text-gray-600 hover:text-gray-900">Security</a>
               <a href="#community" className="text-gray-600 hover:text-gray-900">Community</a>
               <Link to="/docs" className="text-gray-600 hover:text-gray-900">Documentation</Link>
@@ -149,8 +150,51 @@ function App() {
             </div>
           </div>
 
+          {/* Adopters Section */}
+          <div id="adopters" className="py-12 bg-gray-50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center">
+                <div className="flex items-center justify-center space-x-2 mb-6">
+                  <BuildingOfficeIcon className="h-6 w-6 text-primary" />
+                  <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Trusted by Industry Leaders
+                  </h2>
+                </div>
+                <p className="mt-4 text-lg text-gray-500">
+                  K8sGPT is trusted by industry leaders like Spectro Cloud, Nethopper, Upstage AI, and more within our community.
+                </p>
+              </div>
+              <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-sm border border-gray-200">
+                  <img 
+                    src="https://avatars.githubusercontent.com/u/36211249?s=280&v=4" 
+                    alt="Spectro Cloud" 
+                    className="h-12 mb-4"
+                  />
+                  <p className="text-sm text-gray-500">Spectro Cloud</p>
+                </div>
+                <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-sm border border-gray-200">
+                  <img 
+                    src="https://static.wixstatic.com/media/9bf0a1_e1b5c606db2d4f19908deff9f2e69ffd~mv2.png" 
+                    alt="Nethopper" 
+                    className="h-12 mb-4"
+                  />
+                  <p className="text-sm text-gray-500">Nethopper</p>
+                </div>
+                <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-sm border border-gray-200">
+                  <img 
+                    src="https://cdn.prod.website-files.com/6743d5190bb2b52f38e99e37/6743f495cc3c0ed693e0b5f3_Logo_Black.png" 
+                    alt="Upstage AI" 
+                    className="h-12 mb-4"
+                  />
+                  <p className="text-sm text-gray-500">Upstage AI</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Security Section */}
-          <div id="security" className="py-12 bg-gray-50">
+          <div id="security" className="py-12 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center">
                 <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
@@ -186,7 +230,7 @@ function App() {
           </div>
 
           {/* Community Section */}
-          <div id="community" className="py-12 bg-white">
+          <div id="community" className="py-12 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center">
                 <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
@@ -198,7 +242,7 @@ function App() {
               </div>
               <div className="mt-10">
                 <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                  <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
+                  <div className="bg-white p-6 rounded-lg shadow-sm">
                     <UserGroupIcon className="h-8 w-8 text-primary" />
                     <h3 className="mt-4 text-lg font-medium text-gray-900">Community Membership</h3>
                     <p className="mt-2 text-base text-gray-500">
@@ -211,7 +255,7 @@ function App() {
                     </div>
                   </div>
 
-                  <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
+                  <div className="bg-white p-6 rounded-lg shadow-sm">
                     <CalendarIcon className="h-8 w-8 text-primary" />
                     <h3 className="mt-4 text-lg font-medium text-gray-900">Office Hours</h3>
                     <p className="mt-2 text-base text-gray-500">
