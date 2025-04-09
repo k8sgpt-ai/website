@@ -1,5 +1,5 @@
 import { BeakerIcon, ShieldCheckIcon, CloudIcon, CpuChipIcon, UserGroupIcon, CalendarIcon, BuildingOfficeIcon, AdjustmentsHorizontalIcon, MagnifyingGlassIcon, ListBulletIcon, Bars3Icon, XMarkIcon, VideoCameraIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline'
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop';
 import AnimatedBackground from './components/AnimatedBackground';
@@ -8,6 +8,28 @@ function App() {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const iconRef = useRef<HTMLImageElement>(null);
+
+  // Preload the K8sGPT icon to prevent flickering
+  useEffect(() => {
+    const preloadIcon = () => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = '/images/k8sgpt-icon.svg';
+      document.head.appendChild(link);
+    };
+    
+    preloadIcon();
+  }, []);
+
+  // Cache the icon in memory
+  useEffect(() => {
+    if (iconRef.current) {
+      const img = new Image();
+      img.src = '/images/k8sgpt-icon.svg';
+    }
+  }, []);
 
   return (
     <>
@@ -46,7 +68,14 @@ function App() {
               {/* Logo Section */}
               <div className="flex items-center">
                 <Link to="/" className="flex items-center">
-                  <img src="/images/k8sgpt-icon.svg" alt="K8sGPT Icon" className="h-8 w-auto" />
+                  <img 
+                    ref={iconRef}
+                    src="/images/k8sgpt-icon.svg" 
+                    alt="K8sGPT Icon" 
+                    className="h-8 w-auto" 
+                    width="32"
+                    height="32"
+                  />
                   <span className="ml-2 text-xl font-bold hidden sm:inline">K8sGPT</span>
                 </Link>
               </div>
