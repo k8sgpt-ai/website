@@ -1,8 +1,34 @@
 import { BeakerIcon, CommandLineIcon, CubeIcon, ShieldCheckIcon, CloudIcon, CpuChipIcon, UserGroupIcon, CalendarIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline'
+import { Link } from 'react-router-dom'
 
 function App() {
   return (
     <div className="min-h-screen flex flex-col">
+      {/* Auto Remediation Banner */}
+      <div className="bg-indigo-600">
+        <div className="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between flex-wrap">
+            <div className="w-0 flex-1 flex items-center">
+              <span className="flex p-2 rounded-lg bg-indigo-800">
+                <CpuChipIcon className="h-6 w-6 text-white" aria-hidden="true" />
+              </span>
+              <p className="ml-3 font-medium text-white truncate">
+                <span className="md:hidden">New: K8sGPT Auto Remediation!</span>
+                <span className="hidden md:inline">Exciting news! K8sGPT now supports Auto Remediation for Kubernetes issues.</span>
+              </p>
+            </div>
+            <div className="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
+              <Link
+                to="/auto-remediation"
+                className="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-indigo-600 bg-white hover:bg-indigo-50"
+              >
+                Learn more
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Navigation */}
       <nav className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -100,10 +126,18 @@ function App() {
 
               <div className="bg-white p-6 rounded-lg shadow-sm">
                 <CpuChipIcon className="h-8 w-8 text-primary" />
-                <h3 className="mt-4 text-lg font-medium text-gray-900">Remote Caching</h3>
+                <h3 className="mt-4 text-lg font-medium text-gray-900">Auto Remediation</h3>
                 <p className="mt-2 text-base text-gray-500">
-                  Support for AWS S3, Azure Blob, and Google Cloud Storage for remote cache management.
+                  Automatically fix issues in your Kubernetes clusters with AI-powered remediation.
                 </p>
+                <div className="mt-4">
+                  <Link
+                    to="/auto-remediation"
+                    className="text-primary hover:text-secondary font-medium"
+                  >
+                    Learn more →
+                  </Link>
+                </div>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-sm">
