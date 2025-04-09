@@ -1,4 +1,4 @@
-import { BeakerIcon, ShieldCheckIcon, CloudIcon, CpuChipIcon, UserGroupIcon, CalendarIcon, BuildingOfficeIcon, AdjustmentsHorizontalIcon, MagnifyingGlassIcon, ListBulletIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { BeakerIcon, ShieldCheckIcon, CloudIcon, CpuChipIcon, UserGroupIcon, CalendarIcon, BuildingOfficeIcon, AdjustmentsHorizontalIcon, MagnifyingGlassIcon, ListBulletIcon, Bars3Icon, XMarkIcon, VideoCameraIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline'
 import { useState } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop';
@@ -300,7 +300,7 @@ function App() {
                           Join our growing community of users and contributors. We welcome everyone interested in Kubernetes and AI.
                         </p>
                         <div className="mt-4">
-                          <a href="https://github.com/k8sgpt-ai/community/blob/main/community-membership.md" className="text-primary hover:text-secondary font-medium">
+                          <a href="https://github.com/k8sgpt-ai/community/blob/main/community-membership.md" className="text-primary hover:text-secondary font-medium" target="_blank" rel="noopener noreferrer">
                             Learn about membership →
                           </a>
                         </div>
@@ -313,12 +313,70 @@ function App() {
                           Join our regular office hours to get help, share your experiences, and connect with the K8sGPT team.
                         </p>
                         <div className="mt-4">
-                          <a href="https://github.com/k8sgpt-ai/community" className="text-primary hover:text-secondary font-medium">
+                          <a href="https://github.com/k8sgpt-ai/community" className="text-primary hover:text-secondary font-medium" target="_blank" rel="noopener noreferrer">
                             Check schedule →
                           </a>
                         </div>
                       </div>
+
+                      <div className="bg-white p-6 rounded-lg shadow-sm">
+                        <ChatBubbleLeftRightIcon className="h-8 w-8 text-primary" />
+                        <h3 className="mt-4 text-lg font-medium text-gray-900">Join the Conversation</h3>
+                        <p className="mt-2 text-base text-gray-500">
+                          Connect with the community and maintainers on Slack for real-time discussions and support.
+                        </p>
+                        <div className="mt-4">
+                          <a href="https://join.slack.com/t/k8sgpt/shared_invite/zt-2ablh72q8-80lw46~ETCWl5dZQdDnfsg" className="text-primary hover:text-secondary font-medium" target="_blank" rel="noopener noreferrer">
+                            Join Slack →
+                          </a>
+                        </div>
+                      </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* K8sGPT in Action Section */}
+              <div id="videos" className="py-12 bg-gray-50">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div className="text-center">
+                    <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                      K8sGPT in Action
+                    </h2>
+                    <p className="mt-4 text-lg text-gray-500">
+                      See how the community is using K8sGPT to enhance their Kubernetes workflows.
+                    </p>
+                  </div>
+
+                  <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {/* Kubecon 2025 Placeholder */}
+                    <div className="bg-gray-100 rounded-lg shadow-sm p-6 flex flex-col items-center justify-center text-center h-full border border-dashed border-gray-300 min-h-[200px]">
+                      <VideoCameraIcon className="h-12 w-12 text-gray-400 mb-3" />
+                      <h3 className="text-lg font-medium text-gray-700">Kubecon 2025 Talk</h3>
+                      <p className="text-sm text-gray-500 mt-1">Recording coming soon!</p>
+                    </div>
+
+                    {/* Video Embeds */}
+                    {[
+                      'SX_2YHC15cM', // K8sGPT: Kubernetes Superpowers with AI by Alex Jones
+                      '3Mmw2PyY9j0', // K8sGPT: Your Kubernetes SRE Superpowers on Autopilot - Alex Jones, KubeCon EU 2023
+                      'tfZWVutKgFY', // K8sGPT integration in Testkube (OSS tool)
+                      '6HUFn0sSzA0', // K8sGPT : AI assistant for Kubernetes troubleshooting - Kubernetesbytes
+                      'aKVDMh2ha98', // K8sGPT: Giving Kubernetes Superpowers to Everyone
+                      '7WA8XVrod2Y'  // K8sGPT Tutorial | Giving Kubernetes Superpowers
+                    ].map((videoId) => (
+                      <div key={videoId} className="aspect-w-16 aspect-h-9">
+                        <iframe 
+                          className="w-full h-full rounded-lg shadow-sm border border-gray-200"
+                          src={`https://www.youtube.com/embed/${videoId}`}
+                          title={`YouTube video player - ${videoId}`}
+                          frameBorder="0" 
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                          referrerPolicy="strict-origin-when-cross-origin" 
+                          allowFullScreen
+                        ></iframe>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
