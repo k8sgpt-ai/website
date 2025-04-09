@@ -1,4 +1,4 @@
-import { BeakerIcon, ShieldCheckIcon, CloudIcon, CpuChipIcon, UserGroupIcon, CalendarIcon, BuildingOfficeIcon } from '@heroicons/react/24/outline'
+import { BeakerIcon, ShieldCheckIcon, CloudIcon, CpuChipIcon, UserGroupIcon, CalendarIcon, BuildingOfficeIcon, AdjustmentsHorizontalIcon, MagnifyingGlassIcon, ListBulletIcon } from '@heroicons/react/24/outline'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 
 function App() {
@@ -193,35 +193,39 @@ function App() {
             </div>
           </div>
 
-          {/* Security Section */}
+          {/* Guardrails Section (Previously Security) */}
           <div id="security" className="py-12 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center">
                 <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-                  Enterprise-Grade Security
+                  Fine-Grained Control & Guardrails
                 </h2>
                 <p className="mt-4 text-lg text-gray-500">
-                  Built with security in mind for production environments
+                  K8sGPT puts you in control, allowing you to tailor analysis and remediation to your needs.
                 </p>
               </div>
               <div className="mt-10">
-                <div className="bg-white p-6 rounded-lg shadow-sm">
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
                   <ul className="space-y-4 text-gray-600">
                     <li className="flex items-start">
-                      <ShieldCheckIcon className="h-6 w-6 text-primary mt-1 mr-2" />
-                      <span>Data anonymization for sensitive cluster information</span>
+                      <AdjustmentsHorizontalIcon className="h-6 w-6 text-primary mt-1 mr-3 flex-shrink-0" />
+                      <span><strong className="text-gray-900">Toggle Auto-Remediation:</strong> You decide if K8sGPT should automatically apply suggested fixes.</span>
                     </li>
                     <li className="flex items-start">
-                      <ShieldCheckIcon className="h-6 w-6 text-primary mt-1 mr-2" />
-                      <span>Support for local AI models to keep data within your DMZ</span>
+                      <MagnifyingGlassIcon className="h-6 w-6 text-primary mt-1 mr-3 flex-shrink-0" />
+                      <span><strong className="text-gray-900">AI-Free Analysis:</strong> Run built-in analyzers locally without involving any AI backend for simple diagnostics.</span>
                     </li>
                     <li className="flex items-start">
-                      <ShieldCheckIcon className="h-6 w-6 text-primary mt-1 mr-2" />
-                      <span>Secure configuration management with encrypted storage</span>
+                      <ListBulletIcon className="h-6 w-6 text-primary mt-1 mr-3 flex-shrink-0" />
+                      <span><strong className="text-gray-900">Selective Analyzers:</strong> Choose precisely which analyzers to run, focusing only on the areas you need.</span>
                     </li>
                     <li className="flex items-start">
-                      <ShieldCheckIcon className="h-6 w-6 text-primary mt-1 mr-2" />
-                      <span>Remote caching with enterprise storage solutions</span>
+                      <ShieldCheckIcon className="h-6 w-6 text-primary mt-1 mr-3 flex-shrink-0" />
+                      <span><strong className="text-gray-900">Data Anonymization:</strong> Sensitive data is automatically anonymized before being sent to external AI backends.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CpuChipIcon className="h-6 w-6 text-primary mt-1 mr-3 flex-shrink-0" />
+                      <span><strong className="text-gray-900">Local AI Models:</strong> Keep your data entirely within your environment by using supported local AI models.</span>
                     </li>
                   </ul>
                 </div>
