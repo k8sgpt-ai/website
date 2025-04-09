@@ -23,6 +23,9 @@ import Providers from './pages/docs/reference/Providers';
 import Integration from './pages/docs/explanation/Integration';
 import Caching from './pages/docs/explanation/Caching';
 
+// Other Pages
+import Roadmap from './pages/Roadmap';
+
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -35,6 +38,10 @@ export const router = createBrowserRouter([
       {
         path: 'auto-remediation',
         element: <AutoRemediation />,
+      },
+      {
+        path: 'roadmap',
+        element: <Roadmap />,
       },
       {
         path: 'docs',

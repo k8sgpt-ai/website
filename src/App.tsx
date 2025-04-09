@@ -56,6 +56,7 @@ function App() {
                 <a href="/#adopters" className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Adopters</a>
                 <a href="/#guardrails" className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Guardrails</a>
                 <a href="/#community" className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Community</a>
+                <Link to="/roadmap" className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Roadmap</Link>
                 <Link to="/docs" className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Documentation</Link>
                 <Link to="/docs/getting-started/installation" className="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-secondary">
                   Get Started
@@ -90,6 +91,7 @@ function App() {
               <a href="/#adopters" className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Adopters</a>
               <a href="/#guardrails" className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Guardrails</a>
               <a href="/#community" className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Community</a>
+              <Link to="/roadmap" className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Roadmap</Link>
               <Link to="/docs" className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Documentation</Link>
             </div>
             <div className="pt-4 pb-3 border-t border-gray-200">
