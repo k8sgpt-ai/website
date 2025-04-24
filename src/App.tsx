@@ -383,11 +383,22 @@ function App() {
                   </div>
 
                   <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {/* Kubecon 2025 Placeholder */}
-                    <div className="bg-gray-100 rounded-lg shadow-sm p-6 flex flex-col items-center justify-center text-center h-full border border-dashed border-gray-300 min-h-[200px]">
-                      <VideoCameraIcon className="h-12 w-12 text-gray-400 mb-3" />
-                      <h3 className="text-lg font-medium text-gray-700">Kubecon 2025 Talk</h3>
-                      <p className="text-sm text-gray-500 mt-1">Recording coming soon!</p>
+                    {/* Kubecon 2025 Video */}
+                    <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+                      <div className="aspect-w-16 aspect-h-9">
+                        <iframe 
+                          src="https://www.youtube.com/embed/EXtCejkOJB0" 
+                          title="Kubecon 2025 Talk" 
+                          frameBorder="0" 
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                          allowFullScreen
+                          className="w-full h-full"
+                        ></iframe>
+                      </div>
+                      <div className="p-4">
+                        <h3 className="text-lg font-medium text-gray-900">Kubecon 2025 Talk</h3>
+                        <p className="text-sm text-gray-500 mt-1">Latest K8sGPT presentation from KubeCon</p>
+                      </div>
                     </div>
 
                     {/* Video Embeds */}
