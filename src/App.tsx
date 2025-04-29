@@ -1,4 +1,4 @@
-import { BeakerIcon, ShieldCheckIcon, CloudIcon, CpuChipIcon, UserGroupIcon, CalendarIcon, BuildingOfficeIcon, AdjustmentsHorizontalIcon, MagnifyingGlassIcon, ListBulletIcon, Bars3Icon, XMarkIcon, VideoCameraIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline'
+import { BeakerIcon, ShieldCheckIcon, CloudIcon, CpuChipIcon, UserGroupIcon, CalendarIcon, BuildingOfficeIcon, AdjustmentsHorizontalIcon, MagnifyingGlassIcon, ListBulletIcon, Bars3Icon, XMarkIcon, VideoCameraIcon, ChatBubbleLeftRightIcon, CommandLineIcon, ArrowPathIcon } from '@heroicons/react/24/outline'
 import { useState, useEffect, useRef } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop';
@@ -45,17 +45,21 @@ function App() {
                   <CpuChipIcon className="h-6 w-6 text-white" aria-hidden="true" />
                 </span>
                 <p className="ml-3 font-medium text-white truncate">
-                  <span className="md:hidden">New: K8sGPT Auto Remediation!</span>
-                  <span className="hidden md:inline">Exciting news! K8sGPT now supports Auto Remediation for Kubernetes issues.</span>
+                  <span className="md:hidden">New: K8sGPT works with Claude Desktop!</span>
+                  <span className="hidden md:inline">Exciting news! K8sGPT now integrates with Claude Desktop for enhanced Kubernetes management.</span>
                 </p>
               </div>
               <div className="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
-                <Link
-                  to="/auto-remediation"
+                <a
+                  href="#claude-integration"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('claude-integration')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
                   className="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-indigo-600 bg-white hover:bg-indigo-50"
                 >
                   Learn more
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -181,7 +185,7 @@ function App() {
                   </div>
 
                   <div className="mt-10">
-                    <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+                    <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-2">
                       <div className="bg-white p-6 rounded-lg shadow-sm">
                         <BeakerIcon className="h-8 w-8 text-primary" />
                         <h3 className="mt-4 text-lg font-medium text-gray-900">AI-Powered Analysis</h3>
@@ -204,6 +208,68 @@ function App() {
                         <p className="mt-2 text-base text-gray-500">
                           Support for various AI providers including OpenAI, Azure, Google, and local models.
                         </p>
+                      </div>
+
+                      <div className="bg-white p-6 rounded-lg shadow-sm">
+                        <ArrowPathIcon className="h-8 w-8 text-primary" />
+                        <h3 className="mt-4 text-lg font-medium text-gray-900">Auto Remediation</h3>
+                        <p className="mt-2 text-base text-gray-500">
+                          Automatically apply suggested fixes to common Kubernetes issues, reducing manual intervention and speeding up recovery.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Claude Desktop Integration Section */}
+              <div id="claude-integration" className="py-12 bg-gray-50/80 backdrop-blur-sm">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div className="text-center">
+                    <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                      Claude Desktop Integration
+                    </h2>
+                    <p className="mt-4 text-lg text-gray-500">
+                      Seamlessly integrate K8sGPT with Claude Desktop for enhanced Kubernetes management
+                    </p>
+                  </div>
+                  <div className="mt-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                      <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <img 
+                          src="/images/claude.png" 
+                          alt="Claude Desktop Integration" 
+                          className="w-full h-auto rounded-lg shadow-sm"
+                        />
+                      </div>
+                      <div className="space-y-6">
+                        <div className="flex items-start">
+                          <CommandLineIcon className="h-6 w-6 text-primary mt-1 mr-3 flex-shrink-0" />
+                          <div>
+                            <h3 className="text-lg font-medium text-gray-900">Native CLI Experience</h3>
+                            <p className="mt-2 text-base text-gray-500">
+                              Access K8sGPT directly through Claude Desktop's command line interface for a seamless development experience.
+                            </p>
+                          </div>
+                        </div>
+                        <div className="flex items-start">
+                          <CpuChipIcon className="h-6 w-6 text-primary mt-1 mr-3 flex-shrink-0" />
+                          <div>
+                            <h3 className="text-lg font-medium text-gray-900">Enhanced AI Capabilities</h3>
+                            <p className="mt-2 text-base text-gray-500">
+                              Leverage Claude's advanced AI capabilities to get deeper insights into your Kubernetes clusters and workloads.
+                            </p>
+                          </div>
+                        </div>
+                        <div className="flex items-start">
+                          <ArrowPathIcon className="h-6 w-6 text-primary mt-1 mr-3 flex-shrink-0" />
+                          <div>
+                            <h3 className="text-lg font-medium text-gray-900">Streamlined Workflow</h3>
+                            <p className="mt-2 text-base text-gray-500">
+                              Combine the power of K8sGPT's analysis with Claude's natural language understanding for a more intuitive troubleshooting experience.
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
