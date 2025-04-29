@@ -1,4 +1,4 @@
-import { BeakerIcon, ShieldCheckIcon, CloudIcon, CpuChipIcon, UserGroupIcon, CalendarIcon, BuildingOfficeIcon, AdjustmentsHorizontalIcon, MagnifyingGlassIcon, ListBulletIcon, Bars3Icon, XMarkIcon, VideoCameraIcon, ChatBubbleLeftRightIcon, CommandLineIcon, ArrowPathIcon } from '@heroicons/react/24/outline'
+import { BeakerIcon, ShieldCheckIcon, CloudIcon, CpuChipIcon, UserGroupIcon, CalendarIcon, BuildingOfficeIcon, AdjustmentsHorizontalIcon, MagnifyingGlassIcon, ListBulletIcon, Bars3Icon, XMarkIcon, ChatBubbleLeftRightIcon, CommandLineIcon, ArrowPathIcon } from '@heroicons/react/24/outline'
 import { useState, useEffect, useRef } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop';
