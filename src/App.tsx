@@ -270,6 +270,14 @@ function App() {
                             </p>
                           </div>
                         </div>
+                        <div className="mt-4">
+                          <Link
+                            to="/docs/reference/mcp"
+                            className="text-primary hover:text-secondary font-medium"
+                          >
+                            Learn more about MCP →
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   </div>

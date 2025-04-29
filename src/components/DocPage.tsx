@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 
@@ -19,6 +19,16 @@ interface DocPageProps {
 const DocPage: React.FC<DocPageProps> = ({ title, description, children, prev, next }) => {
   const location = useLocation();
   const pathSegments = location.pathname.split('/').filter(Boolean);
+
+  useEffect(() => {
+    // Handle hash-based scrolling
+    if (location.hash) {
+      const element = document.getElementById(location.hash.slice(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location.hash]);
 
   return (
     <div className="min-h-screen bg-white">
@@ -60,8 +70,8 @@ const DocPage: React.FC<DocPageProps> = ({ title, description, children, prev, n
           <div className="prose prose-lg prose-indigo max-w-none
             prose-headings:font-bold prose-headings:tracking-tight
             prose-h1:text-3xl prose-h1:text-gray-900
-            prose-h2:text-2xl prose-h2:text-gray-800 prose-h2:mt-8 prose-h2:mb-4
-            prose-h3:text-xl prose-h3:text-gray-700 prose-h3:mt-6 prose-h3:mb-3
+            prose-h2:text-2xl prose-h2:text-gray-800 prose-h2:mt-8 prose-h2:mb-4 prose-h2:scroll-mt-24
+            prose-h3:text-xl prose-h3:text-gray-700 prose-h3:mt-6 prose-h3:mb-3 prose-h3:scroll-mt-24
             prose-p:text-gray-600 prose-p:leading-7
             prose-code:text-indigo-600 prose-code:bg-indigo-50 prose-code:px-1 prose-code:py-0.5 prose-code:rounded
             prose-pre:bg-gray-900 prose-pre:text-gray-100

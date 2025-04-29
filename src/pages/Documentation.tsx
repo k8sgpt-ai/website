@@ -140,44 +140,49 @@ const Documentation: React.FC = () => {
                     <h3>CLI Reference</h3>
                     <ul className="mt-4 space-y-3">
                       <li>
-                        <Link to="/docs/reference/cli" className="text-gray-600 hover:text-indigo-600">
-                          CLI Overview
+                        <Link to="/docs/reference/cli#overview" className="text-gray-600 hover:text-indigo-600">
+                          Overview & Installation
                         </Link>
                       </li>
                       <li>
-                        <Link to="/docs/reference/cli#integration-filter" className="text-gray-600 hover:text-indigo-600">
-                          Integration and Filter
+                        <Link to="/docs/reference/cli#basic-commands" className="text-gray-600 hover:text-indigo-600">
+                          Basic Commands
                         </Link>
                       </li>
                       <li>
-                        <Link to="/docs/reference/cli#serve-mode" className="text-gray-600 hover:text-indigo-600">
-                          Serve Mode
+                        <Link to="/docs/reference/cli#advanced-commands" className="text-gray-600 hover:text-indigo-600">
+                          Advanced Commands
                         </Link>
                       </li>
                       <li>
-                        <Link to="/docs/reference/cli#debugging" className="text-gray-600 hover:text-indigo-600">
-                          Debugging
+                        <Link to="/docs/reference/cli#configuration" className="text-gray-600 hover:text-indigo-600">
+                          Configuration
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/docs/reference/cli#troubleshooting" className="text-gray-600 hover:text-indigo-600">
+                          Troubleshooting
                         </Link>
                       </li>
                     </ul>
                   </div>
 
                   <div>
-                    <h3>Operator Reference</h3>
+                    <h3>Additional References</h3>
                     <ul className="mt-4 space-y-3">
                       <li>
                         <Link to="/docs/reference/operator" className="text-gray-600 hover:text-indigo-600">
-                          Operator Overview
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/docs/reference/operator#advanced-installation" className="text-gray-600 hover:text-indigo-600">
-                          Advanced Installation Options
+                          Operator Guide
                         </Link>
                       </li>
                       <li>
                         <Link to="/docs/reference/providers" className="text-gray-600 hover:text-indigo-600">
                           AI Providers
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/docs/reference/mcp" className="text-gray-600 hover:text-indigo-600">
+                          MCP Server
                         </Link>
                       </li>
                     </ul>

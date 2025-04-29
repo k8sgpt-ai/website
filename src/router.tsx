@@ -18,6 +18,7 @@ import Observability from './pages/docs/tutorials/Observability';
 import CLIReference from './pages/docs/reference/CLIReference';
 import OperatorReference from './pages/docs/reference/OperatorReference';
 import Providers from './pages/docs/reference/Providers';
+import MCPServer from './pages/docs/reference/MCPServer';
 
 // Explanation Pages
 import Integration from './pages/docs/explanation/Integration';
@@ -89,6 +90,10 @@ export const router = createBrowserRouter([
       {
         path: 'docs/reference/providers',
         element: <Providers />,
+      },
+      {
+        path: 'docs/reference/mcp',
+        element: <MCPServer />,
       },
       // Explanation Routes
       {

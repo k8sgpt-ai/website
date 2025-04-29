@@ -9,7 +9,7 @@ const CLIReference = () => {
       next={{ title: 'Operator Reference', href: '/docs/reference/operator-reference' }}
     >
       <div className="space-y-8">
-        <section>
+        <section id="overview">
           <h2 className="text-2xl font-bold mb-4">Overview</h2>
           <p className="text-gray-600 mb-4">
             The K8sGPT CLI is the primary interface for interacting with K8sGPT. It provides commands for
@@ -36,7 +36,7 @@ wget -q -O - https://raw.githubusercontent.com/k8sgpt-ai/k8sgpt/main/install.sh 
           </div>
         </section>
 
-        <section>
+        <section id="basic-commands">
           <h2 className="text-2xl font-bold mb-4">Basic Commands</h2>
           <div className="space-y-4">
             <h3 className="text-xl font-semibold">Analyze</h3>
@@ -71,7 +71,7 @@ Display the version of K8sGPT`}</code>
           </div>
         </section>
 
-        <section>
+        <section id="advanced-commands">
           <h2 className="text-2xl font-bold mb-4">Advanced Commands</h2>
           <div className="space-y-4">
             <h3 className="text-xl font-semibold">Generate</h3>
@@ -94,7 +94,7 @@ Flags:
           </div>
         </section>
 
-        <section>
+        <section id="configuration">
           <h2 className="text-2xl font-bold mb-4">Configuration</h2>
           <div className="space-y-4">
             <p className="text-gray-600">
@@ -132,39 +132,7 @@ output:
           </div>
         </section>
 
-        <section>
-          <h2 className="text-2xl font-bold mb-4">Examples</h2>
-          <div className="space-y-4">
-            <h3 className="text-xl font-semibold">Basic Analysis</h3>
-            <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-              <code>{`# Analyze all resources in the default namespace
-k8sgpt analyze
-
-# Analyze specific namespace
-k8sgpt analyze -n kube-system
-
-# Analyze with specific analyzers
-k8sgpt analyze -a pod -a deployment
-
-# Output in JSON format
-k8sgpt analyze -f json`}</code>
-            </pre>
-
-            <h3 className="text-xl font-semibold mt-6">Configuration</h3>
-            <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-              <code>{`# List current configuration
-k8sgpt config list
-
-# Add OpenAI configuration
-k8sgpt config add openai --api-key=sk-...
-
-# Set default namespace
-k8sgpt config set namespace default`}</code>
-            </pre>
-          </div>
-        </section>
-
-        <section>
+        <section id="troubleshooting">
           <h2 className="text-2xl font-bold mb-4">Troubleshooting</h2>
           <div className="space-y-4">
             <p className="text-gray-600">
