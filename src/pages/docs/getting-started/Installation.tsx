@@ -106,7 +106,7 @@ Now that you have K8sGPT installed, you can:
 3. Set up auto-remediation
 4. Explore advanced features
 
-Check out our [configuration guide](/docs/configuration) to get started.`;
+Check out our [configuration guide](/docs/getting-started/configuration) to get started.`;
 
   return (
     <DocPage

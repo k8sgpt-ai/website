@@ -7,6 +7,7 @@ import Documentation from './pages/Documentation';
 import Installation from './pages/docs/getting-started/Installation';
 import Overview from './pages/docs/getting-started/Overview';
 import InClusterOperator from './pages/docs/getting-started/InClusterOperator';
+import Configuration from './pages/docs/getting-started/Configuration';
 
 // Tutorial Pages
 import Playground from './pages/docs/tutorials/Playground';
@@ -60,6 +61,10 @@ export const router = createBrowserRouter([
       {
         path: 'docs/getting-started/in-cluster-operator',
         element: <InClusterOperator />,
+      },
+      {
+        path: 'docs/getting-started/configuration',
+        element: <Configuration />,
       },
       // Tutorial Routes
       {

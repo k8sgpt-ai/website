@@ -23,15 +23,41 @@ const Documentation: React.FC = () => {
           </Link>
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h1 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Documentation</h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Everything you need to know about K8sGPT - from getting started to advanced features.
-            </p>
           </div>
         </div>
       </div>
 
       {/* Documentation Content */}
       <div className="mx-auto max-w-7xl px-6 lg:px-8 pb-24">
+        {/* Info Box */}
+        <div className="mb-8 rounded-md bg-blue-50 p-4">
+          <div className="flex">
+            <div className="flex-shrink-0">
+              <InformationCircleIcon className="h-5 w-5 text-blue-400" aria-hidden="true" />
+            </div>
+            <div className="ml-3">
+              <h3 className="text-sm font-medium text-blue-800">Documentation Notice</h3>
+              <div className="mt-2 text-sm text-blue-700">
+                <p>
+                  For the most up-to-date and comprehensive documentation about K8sGPT, please visit:
+                </p>
+                <ul className="mt-2 list-disc pl-5 space-y-1">
+                  <li>
+                    <a href="https://docs.k8sgpt.ai" target="_blank" rel="noopener noreferrer" className="font-medium underline">
+                      docs.k8sgpt.ai
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/k8sgpt-ai/k8sgpt" target="_blank" rel="noopener noreferrer" className="font-medium underline">
+                      GitHub Repository
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar Navigation */}
           <div className="lg:w-64 flex-none">
@@ -92,6 +118,14 @@ const Documentation: React.FC = () => {
                     <h4 className="text-lg font-semibold mb-2">In-Cluster Operator</h4>
                     <p className="text-gray-600 mb-4">Deploy K8sGPT as an operator in your Kubernetes cluster.</p>
                     <Link to="/docs/getting-started/in-cluster-operator" className="text-indigo-600 hover:text-indigo-500">
+                      Learn more →
+                    </Link>
+                  </div>
+
+                  <div className="rounded-lg border border-gray-200 p-6">
+                    <h4 className="text-lg font-semibold mb-2">Configuration</h4>
+                    <p className="text-gray-600 mb-4">Learn how to configure K8sGPT for your specific needs.</p>
+                    <Link to="/docs/getting-started/configuration" className="text-indigo-600 hover:text-indigo-500">
                       Learn more →
                     </Link>
                   </div>
