@@ -1,4 +1,5 @@
-import { CalendarDaysIcon } from '@heroicons/react/24/outline';
+import { CalendarDaysIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
 
 const Roadmap = () => {
   const milestones = [
@@ -11,6 +12,8 @@ const Roadmap = () => {
       title: 'Model Context Protocol Support',
       quarter: 'Q3 2025',
       description: 'Implement support for standard context protocols to enhance compatibility and data sharing with various AI models.',
+      completed: true,
+      link: '/docs/reference/mcp',
     },
     {
       title: 'Additional Core Analyzers',
@@ -46,14 +49,36 @@ const Roadmap = () => {
 
         <div className="mt-12 space-y-8">
           {milestones.map((milestone, index) => (
-            <div key={index} className="bg-gray-50 border border-gray-200 rounded-lg shadow-sm p-6 flex items-start space-x-4">
-              <div className="flex-shrink-0 bg-primary p-2 rounded-full">
-                <CalendarDaysIcon className="h-6 w-6 text-white" aria-hidden="true" />
+            <div key={index} className={`bg-gray-50 border border-gray-200 rounded-lg shadow-sm p-6 flex items-start space-x-4 ${milestone.completed ? 'opacity-75' : ''}`}>
+              <div className={`flex-shrink-0 p-2 rounded-full ${milestone.completed ? 'bg-green-500' : 'bg-primary'}`}>
+                {milestone.completed ? (
+                  <CheckCircleIcon className="h-6 w-6 text-white" aria-hidden="true" />
+                ) : (
+                  <CalendarDaysIcon className="h-6 w-6 text-white" aria-hidden="true" />
+                )}
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900">{milestone.title}</h3>
+                <h3 className="text-lg font-semibold text-gray-900">
+                  {milestone.title}
+                  {milestone.completed && (
+                    <span className="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                      Completed
+                    </span>
+                  )}
+                </h3>
                 <p className="text-sm font-medium text-indigo-600">Target: {milestone.quarter}</p>
                 <p className="mt-1 text-base text-gray-600">{milestone.description}</p>
+                {milestone.completed && milestone.link && (
+                  <Link
+                    to={milestone.link}
+                    className="mt-2 inline-flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-500"
+                  >
+                    View Documentation
+                    <svg className="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                )}
               </div>
             </div>
           ))}

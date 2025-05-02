@@ -1,3 +1,4 @@
+import React from 'react';
 import DocPage from '../../../components/DocPage';
 
 const Providers = () => {
@@ -12,200 +13,173 @@ const Providers = () => {
         <section>
           <h2 className="text-2xl font-bold mb-4">Overview</h2>
           <p className="text-gray-600 mb-4">
-            K8sGPT supports multiple AI providers to analyze your Kubernetes cluster. Each provider offers
-            different models and capabilities, allowing you to choose the one that best fits your needs.
+            A Backend (also called Provider) is a service that provides access to the AI language model. 
+            There are many different backends available for K8sGPT. Each backend has its own strengths and 
+            weaknesses, so it is important to choose the one that is right for your needs.
           </p>
+          <p className="text-gray-600 mb-4">
+            Currently, we have a total of 11 backends available:
+          </p>
+          <ul className="list-disc pl-6 space-y-2 text-gray-600">
+            <li>OpenAI</li>
+            <li>Cohere</li>
+            <li>Amazon Bedrock</li>
+            <li>Amazon SageMaker</li>
+            <li>Azure OpenAI</li>
+            <li>Google Gemini</li>
+            <li>Google Vertex AI</li>
+            <li>Hugging Face</li>
+            <li>IBM watsonx.ai</li>
+            <li>LocalAI</li>
+            <li>Ollama</li>
+            <li>FakeAI</li>
+          </ul>
         </section>
 
         <section>
           <h2 className="text-2xl font-bold mb-4">OpenAI</h2>
+          <p className="text-gray-600 mb-4">
+            OpenAI is the default backend for K8sGPT. We recommend using OpenAI first if you are new to 
+            K8sGPT and if you have an account on OpenAI. OpenAI comes with the access to powerful language 
+            models such as GPT-4.
+          </p>
+          <div className="bg-gray-100 p-4 rounded-lg">
+            <pre className="text-sm overflow-x-auto">
+              <code>
+                {`# Generate OpenAI token
+k8sgpt generate
+
+# Set the token in K8sGPT
+k8sgpt auth add
+
+# Run analysis using OpenAI
+k8sgpt analyze --explain`}
+              </code>
+            </pre>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Cohere</h2>
+          <p className="text-gray-600 mb-4">
+            Cohere allows building conversational apps. It uses Retrieval Augmented Generation (RAG) toolkit 
+            that improves LLM's answer accuracy.
+          </p>
+          <div className="bg-gray-100 p-4 rounded-lg">
+            <pre className="text-sm overflow-x-auto">
+              <code>
+                {`# Configure Cohere backend
+k8sgpt auth add --backend cohere --model command-nightly
+
+# Run analysis using Cohere
+k8sgpt analyze --explain --backend cohere`}
+              </code>
+            </pre>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Amazon Bedrock</h2>
+          <p className="text-gray-600 mb-4">
+            Amazon Bedrock allows building and scaling generative AI applications.
+          </p>
           <div className="space-y-4">
             <p className="text-gray-600">
-              OpenAI is the default provider for K8sGPT, offering powerful language models for analysis.
+              Prerequisites:
             </p>
-            <h3 className="text-xl font-semibold">Configuration</h3>
-            <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-              <code>{`# CLI
-k8sgpt config add openai --api-key=sk-...
-
-# Environment variable
-export K8SGPT_OPENAI_API_KEY=sk-...
-
-# Kubernetes secret
-apiVersion: v1
-kind: Secret
-metadata:
-  name: k8sgpt-secret
-type: Opaque
-stringData:
-  OPENAI_API_KEY: "sk-..."`}</code>
-            </pre>
-            <h3 className="text-xl font-semibold mt-4">Available Models</h3>
             <ul className="list-disc pl-6 space-y-2 text-gray-600">
-              <li><code className="bg-gray-100 px-2 py-1 rounded">gpt-3.5-turbo</code> - Fast and efficient</li>
-              <li><code className="bg-gray-100 px-2 py-1 rounded">gpt-4</code> - More powerful analysis</li>
-              <li><code className="bg-gray-100 px-2 py-1 rounded">gpt-4-turbo</code> - Latest model with improved performance</li>
+              <li>AWS_ACCESS_KEY</li>
+              <li>AWS_SECRET_ACCESS_KEY</li>
+              <li>AWS_DEFAULT_REGION</li>
             </ul>
+            <div className="bg-gray-100 p-4 rounded-lg">
+              <pre className="text-sm overflow-x-auto">
+                <code>
+                  {`# Configure Bedrock backend
+k8sgpt auth add --backend amazonbedrock --model anthropic.claude-v2
+
+# Run analysis using Bedrock
+k8sgpt analyze --explain --backend amazonbedrock`}
+                </code>
+              </pre>
+            </div>
           </div>
         </section>
 
         <section>
           <h2 className="text-2xl font-bold mb-4">Azure OpenAI</h2>
-          <div className="space-y-4">
-            <p className="text-gray-600">
-              Azure OpenAI Service provides access to OpenAI models through Azure's infrastructure.
-            </p>
-            <h3 className="text-xl font-semibold">Configuration</h3>
-            <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-              <code>{`# CLI
-k8sgpt config add azure --api-key=... --endpoint=https://...
+          <p className="text-gray-600 mb-4">
+            Azure OpenAI Provider provides REST API access to OpenAI's powerful language models. It gives 
+            the users an advanced language AI with powerful models with the security and enterprise promise 
+            of Azure.
+          </p>
+          <div className="bg-gray-100 p-4 rounded-lg">
+            <pre className="text-sm overflow-x-auto">
+              <code>
+                {`# Configure Azure OpenAI backend
+k8sgpt auth add --backend azureopenai --baseurl https://<your Azure OpenAI endpoint> --engine <deployment_name> --model <model_name>
 
-# Environment variables
-export K8SGPT_AZURE_API_KEY=...
-export K8SGPT_AZURE_ENDPOINT=https://...
-
-# Kubernetes secret
-apiVersion: v1
-kind: Secret
-metadata:
-  name: k8sgpt-secret
-type: Opaque
-stringData:
-  AZURE_API_KEY: "..."
-  AZURE_ENDPOINT: "https://..."`}</code>
+# Run analysis using Azure OpenAI
+k8sgpt analyze --explain --backend azureopenai`}
+              </code>
             </pre>
-            <h3 className="text-xl font-semibold mt-4">Available Models</h3>
-            <ul className="list-disc pl-6 space-y-2 text-gray-600">
-              <li><code className="bg-gray-100 px-2 py-1 rounded">gpt-35-turbo</code> - Azure's version of GPT-3.5</li>
-              <li><code className="bg-gray-100 px-2 py-1 rounded">gpt-4</code> - Azure's version of GPT-4</li>
-            </ul>
           </div>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">Anthropic</h2>
-          <div className="space-y-4">
-            <p className="text-gray-600">
-              Anthropic provides Claude models, known for their detailed analysis and helpful responses.
-            </p>
-            <h3 className="text-xl font-semibold">Configuration</h3>
-            <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-              <code>{`# CLI
-k8sgpt config add anthropic --api-key=sk-ant-...
+          <h2 className="text-2xl font-bold mb-4">Google Gemini</h2>
+          <p className="text-gray-600 mb-4">
+            Google Gemini allows generative AI capabilities with multimodal approach (it is capable to 
+            understand not only text, but also code, audio, image and video).
+          </p>
+          <div className="bg-gray-100 p-4 rounded-lg">
+            <pre className="text-sm overflow-x-auto">
+              <code>
+                {`# Configure Google Gemini backend
+k8sgpt auth add --backend googlevertexai --model gemini-pro --password "<Your API KEY>"
 
-# Environment variable
-export K8SGPT_ANTHROPIC_API_KEY=sk-ant-...
-
-# Kubernetes secret
-apiVersion: v1
-kind: Secret
-metadata:
-  name: k8sgpt-secret
-type: Opaque
-stringData:
-  ANTHROPIC_API_KEY: "sk-ant-..."`}</code>
+# Run analysis using Google Gemini
+k8sgpt analyze --explain --backend google`}
+              </code>
             </pre>
-            <h3 className="text-xl font-semibold mt-4">Available Models</h3>
-            <ul className="list-disc pl-6 space-y-2 text-gray-600">
-              <li><code className="bg-gray-100 px-2 py-1 rounded">claude-3-opus</code> - Most capable model</li>
-              <li><code className="bg-gray-100 px-2 py-1 rounded">claude-3-sonnet</code> - Balanced performance</li>
-              <li><code className="bg-gray-100 px-2 py-1 rounded">claude-3-haiku</code> - Fast and efficient</li>
-            </ul>
           </div>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">Google AI</h2>
-          <div className="space-y-4">
-            <p className="text-gray-600">
-              Google AI provides access to Gemini models through Google Cloud.
-            </p>
-            <h3 className="text-xl font-semibold">Configuration</h3>
-            <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-              <code>{`# CLI
-k8sgpt config add google --api-key=...
+          <h2 className="text-2xl font-bold mb-4">LocalAI</h2>
+          <p className="text-gray-600 mb-4">
+            LocalAI is a local model, which is an OpenAI compatible API. It uses llama.cpp and ggml to run 
+            inference on consumer-grade hardware.
+          </p>
+          <div className="bg-gray-100 p-4 rounded-lg">
+            <pre className="text-sm overflow-x-auto">
+              <code>
+                {`# Configure LocalAI backend
+k8sgpt auth add --backend localai --model <model_name> --baseurl http://localhost:8080/v1
 
-# Environment variable
-export K8SGPT_GOOGLE_API_KEY=...
-
-# Kubernetes secret
-apiVersion: v1
-kind: Secret
-metadata:
-  name: k8sgpt-secret
-type: Opaque
-stringData:
-  GOOGLE_API_KEY: "..."`}</code>
+# Run analysis using LocalAI
+k8sgpt analyze --explain --backend localai`}
+              </code>
             </pre>
-            <h3 className="text-xl font-semibold mt-4">Available Models</h3>
-            <ul className="list-disc pl-6 space-y-2 text-gray-600">
-              <li><code className="bg-gray-100 px-2 py-1 rounded">gemini-pro</code> - Text generation model</li>
-              <li><code className="bg-gray-100 px-2 py-1 rounded">gemini-ultra</code> - Most capable model</li>
-            </ul>
           </div>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">Local Models</h2>
-          <div className="space-y-4">
-            <p className="text-gray-600">
-              K8sGPT can use locally deployed models for enhanced privacy and reduced latency.
-            </p>
-            <h3 className="text-xl font-semibold">Configuration</h3>
-            <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-              <code>{`# CLI
-k8sgpt config add local --endpoint=http://localhost:8080
+          <h2 className="text-2xl font-bold mb-4">FakeAI</h2>
+          <p className="text-gray-600 mb-4">
+            FakeAI or the NoOpAiProvider might be useful in situations where you need to test a new feature 
+            or simulate the behaviour of an AI based-system without actually invoking it.
+          </p>
+          <div className="bg-gray-100 p-4 rounded-lg">
+            <pre className="text-sm overflow-x-auto">
+              <code>
+                {`# Configure FakeAI backend
+k8sgpt auth add -b noopai
 
-# Environment variable
-export K8SGPT_LOCAL_ENDPOINT=http://localhost:8080
-
-# Kubernetes configuration
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: k8sgpt-config
-data:
-  LOCAL_ENDPOINT: "http://local-model-service:8080"`}</code>
+# Run analysis using FakeAI
+k8sgpt analyze --explain --backend noopai`}
+              </code>
             </pre>
-            <h3 className="text-xl font-semibold mt-4">Supported Frameworks</h3>
-            <ul className="list-disc pl-6 space-y-2 text-gray-600">
-              <li>Hugging Face Transformers</li>
-              <li>LlamaCpp</li>
-              <li>Ollama</li>
-              <li>vLLM</li>
-            </ul>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold mb-4">Provider Selection</h2>
-          <div className="space-y-4">
-            <p className="text-gray-600">
-              Consider the following factors when choosing a provider:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 text-gray-600">
-              <li>Cost and pricing model</li>
-              <li>Performance and response time</li>
-              <li>Data privacy requirements</li>
-              <li>Available models and capabilities</li>
-              <li>Integration with existing infrastructure</li>
-            </ul>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold mb-4">Troubleshooting</h2>
-          <div className="space-y-4">
-            <p className="text-gray-600">
-              Common issues with AI providers:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 text-gray-600">
-              <li>Invalid API keys or authentication</li>
-              <li>Rate limiting and quotas</li>
-              <li>Network connectivity issues</li>
-              <li>Model availability and compatibility</li>
-              <li>Response timeouts</li>
-            </ul>
           </div>
         </section>
       </div>
