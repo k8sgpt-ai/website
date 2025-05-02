@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
+import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import DocSearch from './DocSearch';
 
 interface DocPageProps {
@@ -59,8 +59,8 @@ const DocPage: React.FC<DocPageProps> = ({ title, description, children, prev, n
             </div>
             <DocSearch />
           </div>
-          <div className="mx-auto max-w-4xl">
-            <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{title}</h1>
+          <div className="mx-auto max-w-2xl lg:mx-0">
+            <h1 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">{title}</h1>
             {description && (
               <p className="mt-6 text-lg leading-8 text-gray-600">{description}</p>
             )}
@@ -68,8 +68,8 @@ const DocPage: React.FC<DocPageProps> = ({ title, description, children, prev, n
         </div>
       </div>
 
-      {/* Content */}
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 py-12">
+      {/* Main Content */}
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 pb-12">
         <div className="mx-auto max-w-4xl">
           <div className="prose prose-lg prose-indigo max-w-none
             prose-headings:font-bold prose-headings:tracking-tight
@@ -87,7 +87,7 @@ const DocPage: React.FC<DocPageProps> = ({ title, description, children, prev, n
         </div>
       </div>
 
-      {/* Next/Previous Navigation */}
+      {/* Navigation */}
       <div className="mx-auto max-w-7xl px-6 lg:px-8 pb-12">
         <div className="mx-auto max-w-4xl">
           <div className="mt-8 flex items-center justify-between border-t border-gray-200 pt-8">
