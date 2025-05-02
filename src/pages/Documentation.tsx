@@ -305,6 +305,22 @@ const Documentation: React.FC = () => {
                     Start learning →
                   </Link>
                 </div>
+
+                <div className="rounded-lg border border-gray-200 p-6">
+                  <h3 className="text-lg font-semibold mb-2">Custom Rest Backend</h3>
+                  <p className="text-gray-600 mb-4">Integrate a custom backend with k8sgpt using RESTful API.</p>
+                  <Link to="/docs/tutorials/custom-rest-backend" className="text-indigo-600 hover:text-indigo-500">
+                    Start learning →
+                  </Link>
+                </div>
+
+                <div className="rounded-lg border border-gray-200 p-6">
+                  <h3 className="text-lg font-semibold mb-2">Observability</h3>
+                  <p className="text-gray-600 mb-4">Integrate Prometheus and Grafana with K8sGPT.</p>
+                  <Link to="/docs/tutorials/observability" className="text-indigo-600 hover:text-indigo-500">
+                    Start learning →
+                  </Link>
+                </div>
               </div>
             </section>
 

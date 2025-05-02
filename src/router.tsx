@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import App from './App';
 import AutoRemediation from './pages/AutoRemediation';
 import Documentation from './pages/Documentation';
+import ErrorBoundary from './components/ErrorBoundary';
 
 // Getting Started Pages
 import Installation from './pages/docs/getting-started/Installation';
@@ -14,6 +15,7 @@ import Playground from './pages/docs/tutorials/Playground';
 import CustomAnalyzers from './pages/docs/tutorials/CustomAnalyzers';
 import SlackIntegration from './pages/docs/tutorials/SlackIntegration';
 import Observability from './pages/docs/tutorials/Observability';
+import CustomRestBackend from './pages/docs/tutorials/CustomRestBackend';
 
 // Reference Pages
 import CLIReference from './pages/docs/reference/CLIReference';
@@ -32,6 +34,7 @@ export const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    errorElement: <ErrorBoundary />,
     children: [
       {
         path: '/',
@@ -82,6 +85,10 @@ export const router = createBrowserRouter([
       {
         path: 'docs/tutorials/observability',
         element: <Observability />,
+      },
+      {
+        path: 'docs/tutorials/custom-rest-backend',
+        element: <CustomRestBackend />,
       },
       // Reference Routes
       {
