@@ -34,7 +34,7 @@ export const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    errorElement: <ErrorBoundary />,
+    errorElement: <ErrorBoundary><div>An error occurred</div></ErrorBoundary>,
     children: [
       {
         path: '/',
