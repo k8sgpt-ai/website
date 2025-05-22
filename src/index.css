@@ -18,4 +18,18 @@
   .animation-delay-4000 {
     animation-delay: 4s;
   }
+}
+
+/* Mailchimp Popup Animation */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.mailchimp-popup {
+  animation: slideUp 0.5s ease-out forwards;
 } 

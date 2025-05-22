@@ -3,12 +3,24 @@ import { useState, useEffect, useRef } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop';
 import AnimatedBackground from './components/AnimatedBackground';
+import MailchimpPopup from './components/MailchimpPopup';
 
 function App() {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showMailchimpPopup, setShowMailchimpPopup] = useState(false);
   const iconRef = useRef<HTMLImageElement>(null);
+
+  // Show Mailchimp popup after 5 seconds on homepage
+  useEffect(() => {
+    if (isHomePage) {
+      const timer = setTimeout(() => {
+        setShowMailchimpPopup(true);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [isHomePage]);
 
   // Preload the K8sGPT icon to prevent flickering
   useEffect(() => {
@@ -36,6 +48,7 @@ function App() {
       <ScrollToTop />
       <div className="min-h-screen flex flex-col">
         {isHomePage && <AnimatedBackground />}
+        {showMailchimpPopup && <MailchimpPopup onClose={() => setShowMailchimpPopup(false)} />}
         {/* Auto Remediation Banner */}
         <div className="bg-indigo-600">
           <div className="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
