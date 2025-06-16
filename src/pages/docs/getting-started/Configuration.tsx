@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import DocPage from '../../../components/DocPage';
 
 const Configuration: React.FC = () => {
