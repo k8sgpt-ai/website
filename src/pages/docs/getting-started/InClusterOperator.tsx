@@ -18,6 +18,30 @@ const InClusterOperator = () => {
         </section>
 
         <section>
+          <h2 className="text-2xl font-bold mb-4">Video Tutorials</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="aspect-video">
+              <iframe
+                className="w-full h-full rounded-lg shadow-lg"
+                src="https://www.youtube.com/embed/hb4du-oK0KY"
+                title="K8sGPT Operator Tutorial 1"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+            <div className="aspect-video">
+              <iframe
+                className="w-full h-full rounded-lg shadow-lg"
+                src="https://www.youtube.com/embed/SX_2YHC15cM"
+                title="K8sGPT Operator Tutorial 2"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </section>
+
+        <section>
           <h2 className="text-2xl font-bold mb-4">Prerequisites</h2>
           <ul className="list-disc pl-6 space-y-2 text-gray-600">
             <li>Kubernetes cluster (1.19+)</li>
