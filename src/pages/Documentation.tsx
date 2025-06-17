@@ -17,10 +17,16 @@ const searchIndex = [
     content: 'Learn how to install K8sGPT using various methods including CLI, operator, and package managers.'
   },
   {
-    title: 'Configuration',
+    title: 'K8sGPT Configuration',
     link: '/docs/getting-started/configuration',
     section: 'Getting Started',
-    content: 'Learn how to configure K8sGPT for your specific needs using YAML configuration files and environment variables.'
+    content: 'Learn how to configure K8sGPT for your specific needs using YAML configuration files.'
+  },
+  {
+    title: 'Operator Configuration',
+    link: '/docs/getting-started/operator-configuration',
+    section: 'Getting Started',
+    content: 'Learn how to configure the K8sGPT Operator for your Kubernetes cluster.'
   },
   {
     title: 'In-Cluster Operator',
@@ -267,9 +273,17 @@ const Documentation: React.FC = () => {
                   </div>
 
                   <div className="rounded-lg border border-gray-200 p-6">
-                    <h4 className="text-lg font-semibold mb-2">Configuration</h4>
-                    <p className="text-gray-600 mb-4">Learn how to configure K8sGPT for your specific needs.</p>
-                    <Link to="/docs/getting-started/configuration" className="text-indigo-600 hover:text-indigo-500">
+                    <h4 className="text-lg font-semibold mb-2">CLI Configuration</h4>
+                    <p className="text-gray-600 mb-4">Configure K8sGPT CLI settings and options.</p>
+                    <Link to="/docs/getting-started/cli-configuration" className="text-indigo-600 hover:text-indigo-500">
+                      Learn more →
+                    </Link>
+                  </div>
+
+                  <div className="rounded-lg border border-gray-200 p-6">
+                    <h4 className="text-lg font-semibold mb-2">Operator Configuration</h4>
+                    <p className="text-gray-600 mb-4">Configure the K8sGPT Operator for your Kubernetes cluster.</p>
+                    <Link to="/docs/getting-started/operator-configuration" className="text-indigo-600 hover:text-indigo-500">
                       Learn more →
                     </Link>
                   </div>

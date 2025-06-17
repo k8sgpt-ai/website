@@ -1,11 +1,11 @@
 import React from 'react';
 import DocPage from '../../../components/DocPage';
 
-const Configuration: React.FC = () => {
+const OperatorConfiguration: React.FC = () => {
   return (
     <DocPage
-      title="Configuration"
-      description="Learn how to configure K8sGPT for your specific needs"
+      title="Operator Configuration"
+      description="Learn how to configure the K8sGPT Operator for your Kubernetes cluster"
       prev={{ title: "Installation", href: "/docs/getting-started/installation" }}
       next={{ title: "In-Cluster Operator", href: "/docs/getting-started/in-cluster-operator" }}
     >
@@ -173,4 +173,4 @@ status:                        # Observed status of the K8sGPT operator (read-on
   );
 };
 
-export default Configuration; 
+export default OperatorConfiguration; 
