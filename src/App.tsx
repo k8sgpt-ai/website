@@ -4,6 +4,7 @@ import { Link, Outlet, useLocation } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop';
 import AnimatedBackground from './components/AnimatedBackground';
 import MailchimpPopup from './components/MailchimpPopup';
+import MCPFeatures from './components/MCPFeatures';
 
 function App() {
   const location = useLocation();
@@ -49,27 +50,27 @@ function App() {
       <div className="min-h-screen flex flex-col">
         {isHomePage && <AnimatedBackground />}
         {showMailchimpPopup && <MailchimpPopup onClose={() => setShowMailchimpPopup(false)} />}
-        {/* Auto Remediation Banner */}
+        {/* MCP Banner */}
         <div className="bg-indigo-600">
-          <div className="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between flex-wrap">
-              <div className="w-0 flex-1 flex items-center">
-                <span className="flex p-2 rounded-lg bg-indigo-800">
-                  <CpuChipIcon className="h-6 w-6 text-white" aria-hidden="true" />
+          <div className="max-w-7xl mx-auto py-2 px-3 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between flex-wrap gap-2">
+              <div className="flex-1 flex items-center min-w-0">
+                <span className="flex p-1 rounded-lg bg-indigo-800 flex-shrink-0">
+                  <CpuChipIcon className="h-5 w-5 text-white" aria-hidden="true" />
                 </span>
-                <p className="ml-3 font-medium text-white truncate">
-                  <span className="md:hidden">New: K8sGPT works with Claude Desktop!</span>
-                  <span className="hidden md:inline">Exciting news! K8sGPT now integrates with Claude Desktop for enhanced Kubernetes management.</span>
+                <p className="ml-2 font-medium text-white text-xs sm:text-sm">
+                  <span className="md:hidden">New: K8sGPT MCP Server with AI Integration!</span>
+                  <span className="hidden md:inline">Exciting news! K8sGPT now features a powerful Model Context Protocol (MCP) server for Claude and other AI assistants.</span>
                 </p>
               </div>
-              <div className="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
+              <div className="flex-shrink-0">
                 <a
-                  href="#claude-integration"
+                  href="#mcp-features"
                   onClick={(e) => {
                     e.preventDefault();
-                    document.getElementById('claude-integration')?.scrollIntoView({ behavior: 'smooth' });
+                    document.getElementById('mcp-features')?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-indigo-600 bg-white hover:bg-indigo-50"
+                  className="inline-flex items-center justify-center px-3 py-1 border border-transparent rounded text-xs font-medium text-indigo-600 bg-white hover:bg-indigo-50 whitespace-nowrap"
                 >
                   Learn more
                 </a>
@@ -81,9 +82,9 @@ function App() {
         {/* Navigation */}
         <nav className="bg-white shadow-sm sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between h-16">
+            <div className="flex justify-between items-center h-16 min-w-0">
               {/* Logo Section */}
-              <div className="flex items-center">
+              <div className="flex items-center flex-shrink-0">
                 <Link to="/" className="flex items-center">
                   <img 
                     ref={iconRef}
@@ -93,26 +94,29 @@ function App() {
                     width="32"
                     height="32"
                   />
-                  <span className="ml-2 text-xl font-bold hidden sm:inline">K8sGPT</span>
+                  <span className="ml-2 text-lg font-bold hidden sm:inline">K8sGPT</span>
                 </Link>
               </div>
 
               {/* Desktop Links - Hidden on Mobile */}
-              <div className="hidden sm:flex sm:items-center sm:space-x-4">
-                <a href="/#features" className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Features</a>
-                <a href="/#providers" className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">AI Providers</a>
-                <a href="/#adopters" className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Adopters</a>
-                <a href="/#guardrails" className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Guardrails</a>
-                <a href="/#community" className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Community</a>
-                <Link to="/roadmap" className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Roadmap</Link>
-                <Link to="/docs" className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Documentation</Link>
-                <Link to="/docs/getting-started/installation" className="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-secondary">
+              <div className="hidden md:flex md:items-center md:space-x-2 lg:space-x-3 min-w-0 flex-1 justify-center">
+                <a href="/#features" className="text-gray-600 hover:text-gray-900 px-2 lg:px-3 py-2 rounded-md text-xs lg:text-sm font-medium whitespace-nowrap">Features</a>
+                <a href="/#mcp-features" className="text-gray-600 hover:text-gray-900 px-2 lg:px-3 py-2 rounded-md text-xs lg:text-sm font-medium whitespace-nowrap">MCP</a>
+                <a href="/#providers" className="text-gray-600 hover:text-gray-900 px-2 lg:px-3 py-2 rounded-md text-xs lg:text-sm font-medium whitespace-nowrap">Providers</a>
+                <a href="/#adopters" className="text-gray-600 hover:text-gray-900 px-2 lg:px-3 py-2 rounded-md text-xs lg:text-sm font-medium whitespace-nowrap">Adopters</a>
+                <a href="/#guardrails" className="text-gray-600 hover:text-gray-900 px-2 lg:px-3 py-2 rounded-md text-xs lg:text-sm font-medium whitespace-nowrap">Guardrails</a>
+                <Link to="/docs" className="text-gray-600 hover:text-gray-900 px-2 lg:px-3 py-2 rounded-md text-xs lg:text-sm font-medium whitespace-nowrap">Docs</Link>
+              </div>
+
+              {/* Right side buttons */}
+              <div className="flex items-center space-x-2 flex-shrink-0">
+                <Link to="/docs/getting-started/installation" className="bg-primary text-white px-3 lg:px-4 py-2 rounded-md text-xs lg:text-sm font-medium hover:bg-secondary whitespace-nowrap">
                   Get Started
                 </Link>
               </div>
 
               {/* Mobile Menu Button - Hidden on Desktop */}
-              <div className="-mr-2 flex items-center sm:hidden">
+              <div className="md:hidden flex items-center ml-2">
                 <button 
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                   type="button" 
@@ -132,19 +136,18 @@ function App() {
           </div>
 
           {/* Mobile Menu - Shown when isMobileMenuOpen is true */}
-          <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} sm:hidden`} id="mobile-menu">
+          <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden`} id="mobile-menu">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <a href="/#features" className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Features</a>
-              <a href="/#providers" className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">AI Providers</a>
-              <a href="/#adopters" className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Adopters</a>
-              <a href="/#guardrails" className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Guardrails</a>
-              <a href="/#community" className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Community</a>
-              <Link to="/roadmap" className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Roadmap</Link>
-              <Link to="/docs" className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Documentation</Link>
+              <a href="/#features" className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-sm font-medium">Features</a>
+              <a href="/#mcp-features" className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-sm font-medium">MCP</a>
+              <a href="/#providers" className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-sm font-medium">Providers</a>
+              <a href="/#adopters" className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-sm font-medium">Adopters</a>
+              <a href="/#guardrails" className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-sm font-medium">Guardrails</a>
+              <Link to="/docs" className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-sm font-medium">Docs</Link>
             </div>
             <div className="pt-4 pb-3 border-t border-gray-200">
               <div className="px-2">
-                <Link to="/docs/getting-started/installation" className="block w-full text-center bg-primary text-white px-4 py-2 rounded-md text-base font-medium hover:bg-secondary">
+                <Link to="/docs/getting-started/installation" className="block w-full text-center bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-secondary">
                   Get Started
                 </Link>
               </div>
@@ -296,6 +299,9 @@ function App() {
                   </div>
                 </div>
               </div>
+
+              {/* MCP Features Section */}
+              <MCPFeatures />
 
               {/* AI Providers Section */}
               <div id="providers" className="py-12 bg-white/80 backdrop-blur-sm">
