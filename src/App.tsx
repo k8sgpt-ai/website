@@ -251,14 +251,15 @@ function App() {
                   </div>
                   <div className="mt-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                      <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                      <div className="order-2 lg:order-1 bg-white p-6 rounded-lg shadow-sm border border-gray-200">
                         <img 
                           src="/images/claude.png" 
                           alt="Claude Desktop Integration" 
                           className="w-full h-auto rounded-lg shadow-sm"
+                          loading="lazy"
                         />
                       </div>
-                      <div className="space-y-6">
+                      <div className="order-1 lg:order-2 space-y-6">
                         <div className="flex items-start">
                           <CommandLineIcon className="h-6 w-6 text-primary mt-1 mr-3 flex-shrink-0" />
                           <div>
