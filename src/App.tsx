@@ -524,6 +524,29 @@ function App() {
             <Outlet />
           )}
         </main>
+
+        {/* Footer */}
+        <footer className="bg-gray-900 text-gray-300 py-8 mt-auto">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <p className="text-sm">
+                Copyright K8sGPT a Series of LF Projects, LLC.
+              </p>
+              <p className="text-sm mt-2">
+                For website terms of use, trademark policy and other project policies please see{' '}
+                <a 
+                  href="https://lfprojects.org/policies/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-indigo-400 hover:text-indigo-300 underline"
+                >
+                  lfprojects.org/policies
+                </a>
+                .
+              </p>
+            </div>
+          </div>
+        </footer>
       </div>
     </>
   );
