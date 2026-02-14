@@ -8,6 +8,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 import Installation from './pages/docs/getting-started/Installation';
 import Overview from './pages/docs/getting-started/Overview';
 import InClusterOperator from './pages/docs/getting-started/InClusterOperator';
+import Configuration from './pages/docs/getting-started/Configuration';
 import OperatorConfiguration from './pages/docs/getting-started/OperatorConfiguration';
 import CLIConfiguration from './pages/docs/getting-started/CLIConfiguration';
 
@@ -61,6 +62,10 @@ export const router = createBrowserRouter([
       {
         path: 'docs/getting-started/installation',
         element: <Installation />,
+      },
+      {
+        path: 'docs/getting-started/configuration',
+        element: <Configuration />,
       },
       {
         path: 'docs/getting-started/in-cluster-operator',
