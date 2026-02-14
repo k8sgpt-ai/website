@@ -37,8 +37,14 @@ const Overview: React.FC = () => {
           <li>
             <h3 className="font-semibold">Multiple AI Providers</h3>
             <p>
-              Choose from various AI providers including OpenAI, Azure, Google Vertex AI,
-              Amazon Bedrock, and more. Support for local models ensures data privacy.
+              Choose from 15+ AI providers including OpenAI, Azure, Google (Vertex AI & GenAI),
+              Amazon (Bedrock & SageMaker), Groq, Cohere, and more. Support for local models 
+              (Ollama, LocalAI) ensures complete data privacy.
+            </p>
+            <p className="mt-2 text-sm text-gray-600">
+              <a href="/docs/reference/providers" className="text-purple-600 hover:underline">
+                See all supported providers →
+              </a>
             </p>
           </li>
           <li>
@@ -85,6 +91,11 @@ const Overview: React.FC = () => {
           of its features:
         </p>
         <ul className="mt-4 list-disc pl-6 space-y-2">
+          <li>
+            <a href="/docs/tutorials/ollama" className="text-indigo-600 hover:text-indigo-500">
+              Use Ollama for Local LLMs
+            </a>
+          </li>
           <li>
             <a href="/docs/tutorials/playground" className="text-indigo-600 hover:text-indigo-500">
               Try the K8sGPT Playground
