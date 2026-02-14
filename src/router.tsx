@@ -18,6 +18,7 @@ import CustomAnalyzers from './pages/docs/tutorials/CustomAnalyzers';
 import SlackIntegration from './pages/docs/tutorials/SlackIntegration';
 import Observability from './pages/docs/tutorials/Observability';
 import CustomRestBackend from './pages/docs/tutorials/CustomRestBackend';
+import OllamaIntegration from './pages/docs/tutorials/OllamaIntegration';
 
 // Reference Pages
 import CLIReference from './pages/docs/reference/CLIReference';
@@ -91,6 +92,10 @@ export const router = createBrowserRouter([
       {
         path: 'docs/tutorials/slack-integration',
         element: <SlackIntegration />,
+      },
+      {
+        path: 'docs/tutorials/ollama',
+        element: <OllamaIntegration />,
       },
       {
         path: 'docs/tutorials/observability',

@@ -48,14 +48,16 @@ spec:
           <div className="space-y-6">
             <div>
               <h3 className="text-xl font-semibold mb-2">Backend</h3>
-              <p className="text-gray-600">Specify the AI backend to use. Supported options:</p>
+              <p className="text-gray-600 mb-2">Specify the AI backend to use. K8sGPT supports 15+ providers including:</p>
               <ul className="list-disc pl-6 mt-2 text-gray-600">
-                <li>openai</li>
-                <li>azureopenai</li>
-                <li>localai</li>
-                <li>anthropic</li>
-                <li>cohere</li>
+                <li><strong>Cloud:</strong> openai, azureopenai, googlevertexai, amazonbedrock, groq, cohere, and more</li>
+                <li><strong>Local/Self-hosted:</strong> ollama, localai, custom REST backends</li>
               </ul>
+              <p className="mt-3 text-sm">
+                <a href="/docs/reference/providers" className="text-purple-600 hover:underline font-medium">
+                  See complete provider list and setup guides →
+                </a>
+              </p>
             </div>
 
             <div>
