@@ -49,7 +49,7 @@ kubectl apply -f https://raw.githubusercontent.com/k8sgpt-ai/k8sgpt-operator/mai
 ### Homebrew (macOS)
 
 \`\`\`bash
-brew tap k8sgpt-ai/tap
+brew tap k8sgpt-ai/k8sgpt
 brew install k8sgpt
 \`\`\`
 
