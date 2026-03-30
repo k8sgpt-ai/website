@@ -7,8 +7,69 @@ import {
   ServerIcon, 
   BeakerIcon,
   CircleStackIcon,
-  CloudIcon
+  CloudIcon,
+  ClipboardDocumentIcon,
+  CheckIcon
 } from '@heroicons/react/24/outline';
+
+const CodeBlock = ({ node, inline, className, children, ...props }: any) => {
+  const [copied, setCopied] = React.useState(false);
+  const match = /language-(\w+)/.exec(className || '');
+  const language = match ? match[1] : '';
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(String(children).replace(/\n$/, ''));
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  if (language || !inline) {
+    return (
+      <div className="relative group rounded-xl bg-gray-900 shadow-md my-6 overflow-hidden border border-gray-800">
+        <div className="flex items-center justify-between px-4 py-3 bg-gray-800/80 border-b border-gray-700/50">
+          <div className="flex items-center gap-2">
+            <div className="flex gap-1.5">
+              <div className="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
+            </div>
+            {language && <span className="ml-2 text-xs font-mono text-gray-400 capitalize">{language}</span>}
+          </div>
+          <button
+            onClick={handleCopy}
+            className="flex items-center gap-1.5 text-xs text-gray-400 hover:text-white transition-colors p-1 rounded-md hover:bg-gray-700"
+            aria-label="Copy code"
+          >
+            {copied ? (
+              <>
+                <CheckIcon className="h-4 w-4 text-green-400" />
+                <span className="text-green-400">Copied</span>
+              </>
+            ) : (
+              <>
+                <ClipboardDocumentIcon className="h-4 w-4" />
+                <span>Copy</span>
+              </>
+            )}
+          </button>
+        </div>
+        <div className="overflow-x-auto p-4 max-w-full">
+          <pre className="!m-0 !p-0 bg-transparent border-0">
+            <code className={`${className} text-sm text-gray-300 font-mono inline-block`} {...props}>
+              {children}
+            </code>
+          </pre>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <code className="bg-gray-100 text-indigo-600 rounded px-1.5 py-0.5 text-sm font-mono border border-gray-200" {...props}>
+      {children}
+    </code>
+  );
+};
 
 const Installation: React.FC = () => {
   const markdownContent = `# Installation Methods
@@ -148,6 +209,8 @@ Check out our [configuration guide](/docs/getting-started/configuration) to get 
                 </div>
               );
             },
+            pre: ({ node, ref, ...props }: any) => <div className="my-6 max-w-full">{props.children}</div>,
+            code: CodeBlock,
           }}
         >
           {markdownContent.replace('# Installation Methods\n\n', '')}
