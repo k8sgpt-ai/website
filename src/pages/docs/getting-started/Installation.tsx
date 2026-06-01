@@ -148,6 +148,32 @@ Check out our [configuration guide](/docs/getting-started/configuration) to get 
                 </div>
               );
             },
+            pre: ({node, children, ...props}) => (
+              <pre
+                className="my-4 max-w-full overflow-x-auto rounded-lg bg-gray-100 p-4 text-sm"
+                {...props}
+              >
+                {children}
+              </pre>
+            ),
+            code: ({node, className, children, ...props}) => {
+              const isInline = !className;
+              if (isInline) {
+                return (
+                  <code
+                    className="rounded bg-gray-100 px-2 py-1 break-words"
+                    {...props}
+                  >
+                    {children}
+                  </code>
+                );
+              }
+              return (
+                <code className={`${className ?? ''} whitespace-pre`} {...props}>
+                  {children}
+                </code>
+              );
+            },
           }}
         >
           {markdownContent.replace('# Installation Methods\n\n', '')}
