@@ -6,14 +6,14 @@ const OperatorConfiguration: React.FC = () => {
     <DocPage
       title="Operator Configuration"
       description="Learn how to configure the K8sGPT Operator for your Kubernetes cluster"
-      prev={{ title: "Installation", href: "/docs/getting-started/installation" }}
+      prev={{ title: "CLI Configuration", href: "/docs/getting-started/cli-configuration" }}
       next={{ title: "In-Cluster Operator", href: "/docs/getting-started/in-cluster-operator" }}
     >
       <div className="space-y-8">
         <section>
           <h2 className="text-2xl font-bold mb-4">Configuration File</h2>
-          <p className="text-gray-600 mb-4">
-            K8sGPT uses a YAML configuration file to manage its settings. By default, it looks for a file named <code className="bg-gray-100 px-1 py-0.5 rounded">k8sgpt.yaml</code> in your home directory, but you can specify a different location using the <code className="bg-gray-100 px-1 py-0.5 rounded">--config</code> flag.
+          <p className="text-fl-mute mb-4">
+            K8sGPT uses a YAML configuration file to manage its settings. By default, it looks for a file named <code className="bg-black/40 px-1 py-0.5 rounded">k8sgpt.yaml</code> in your home directory, but you can specify a different location using the <code className="bg-black/40 px-1 py-0.5 rounded">--config</code> flag.
           </p>
         </section>
 
@@ -22,15 +22,15 @@ const OperatorConfiguration: React.FC = () => {
           <ul className="space-y-4">
             <li>
               <h3 className="font-semibold">Backend</h3>
-              <p className="text-gray-600">Specify the AI backend to use (e.g., OpenAI, Anthropic, etc.)</p>
+              <p className="text-fl-mute">Specify the AI backend to use (e.g., OpenAI, Anthropic, etc.)</p>
             </li>
             <li>
               <h3 className="font-semibold">Model</h3>
-              <p className="text-gray-600">The specific model to use with the selected backend</p>
+              <p className="text-fl-mute">The specific model to use with the selected backend</p>
             </li>
             <li>
               <h3 className="font-semibold">API Key</h3>
-              <p className="text-gray-600">Your API key for the selected backend</p>
+              <p className="text-fl-mute">Your API key for the selected backend</p>
             </li>
           </ul>
         </section>
@@ -40,29 +40,29 @@ const OperatorConfiguration: React.FC = () => {
           <ul className="space-y-4">
             <li>
               <h3 className="font-semibold">Filters</h3>
-              <p className="text-gray-600">Configure which resources to analyze and which to ignore</p>
+              <p className="text-fl-mute">Configure which resources to analyze and which to ignore</p>
             </li>
             <li>
               <h3 className="font-semibold">Output Format</h3>
-              <p className="text-gray-600">Customize the output format (JSON, YAML, etc.)</p>
+              <p className="text-fl-mute">Customize the output format (JSON, YAML, etc.)</p>
             </li>
             <li>
               <h3 className="font-semibold">Cache Settings</h3>
-              <p className="text-gray-600">Configure caching behavior for analysis results</p>
+              <p className="text-fl-mute">Configure caching behavior for analysis results</p>
             </li>
             <li>
               <h3 className="font-semibold">Analysis Interval</h3>
-              <p className="text-gray-600">Configure how frequently K8sGPT performs analysis of your cluster. The interval should be specified in a format that can be parsed by Go's time.ParseDuration function (e.g., "30s", "1m", "2h"). If not specified, the default interval is 30 seconds.</p>
+              <p className="text-fl-mute">Configure how frequently K8sGPT performs analysis of your cluster. The interval should be specified in a format that can be parsed by Go's time.ParseDuration function (e.g., "30s", "1m", "2h"). If not specified, the default interval is 30 seconds.</p>
             </li>
           </ul>
         </section>
 
         <section>
           <h2 className="text-2xl font-bold mb-4">Complete Configuration Example</h2>
-          <p className="text-gray-600 mb-4">
+          <p className="text-fl-mute mb-4">
             Here's a complete example of all available configuration options in the K8sGPT CRD:
           </p>
-          <div className="bg-gray-100 p-4 rounded-lg">
+          <div className="bg-black/40 p-4 rounded-lg">
             <pre className="text-sm overflow-x-auto">
               <code>
                 {`apiVersion: k8sgpt.ai/v1alpha1  # API version

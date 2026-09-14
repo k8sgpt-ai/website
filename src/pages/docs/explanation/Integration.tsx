@@ -5,18 +5,18 @@ const Integration = () => {
     <DocPage
       title="Integration"
       description="Learn how to integrate K8sGPT with other tools and systems"
-      prev={{ title: 'Providers', href: '/docs/reference/providers' }}
-      next={{ title: 'Overview', href: '/docs/getting-started/overview' }}
+      prev={{ title: 'MCP Server', href: '/docs/reference/mcp' }}
+      next={{ title: 'Caching', href: '/docs/explanation/caching' }}
     >
       <div className="space-y-8">
         <section>
           <h2 className="text-2xl font-bold mb-4">Overview</h2>
-          <p className="text-gray-600 mb-4">
+          <p className="text-fl-mute mb-4">
             K8sGPT is designed to integrate seamlessly with your existing Kubernetes ecosystem and tools.
             This page covers various integration options to help you incorporate K8sGPT into your workflows.
           </p>
-          <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
-            <p className="text-blue-700">
+          <div className="bg-fl-panel border-l-4 border-fl-accent p-4 mb-4">
+            <p className="text-fl-mute">
               <strong>CNCF Project:</strong> K8sGPT is an open source project hosted by the Cloud Native Computing Foundation (CNCF). 
               It was accepted to CNCF at the <strong>Sandbox</strong> maturity level on December 19, 2023. 
               Learn more at <a href="https://www.cncf.io/projects/k8sgpt/" target="_blank" rel="noopener noreferrer" className="underline">CNCF K8sGPT project page</a>.
@@ -27,11 +27,11 @@ const Integration = () => {
         <section>
           <h2 className="text-2xl font-bold mb-4">CI/CD Integration</h2>
           <div className="space-y-4">
-            <p className="text-gray-600">
+            <p className="text-fl-mute">
               Integrate K8sGPT into your CI/CD pipelines to catch issues before they reach production:
             </p>
             <h3 className="text-xl font-semibold">GitHub Actions</h3>
-            <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
+            <pre className="bg-black/40 p-4 rounded-lg overflow-x-auto">
               <code>{`name: K8sGPT Analysis
 on:
   push:
@@ -56,7 +56,7 @@ jobs:
             </pre>
 
             <h3 className="text-xl font-semibold mt-6">GitLab CI</h3>
-            <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
+            <pre className="bg-black/40 p-4 rounded-lg overflow-x-auto">
               <code>{`analyze:
   image: ubuntu:latest
   before_script:
@@ -76,11 +76,11 @@ jobs:
         <section>
           <h2 className="text-2xl font-bold mb-4">Monitoring Integration</h2>
           <div className="space-y-4">
-            <p className="text-gray-600">
+            <p className="text-fl-mute">
               Connect K8sGPT with your monitoring stack:
             </p>
             <h3 className="text-xl font-semibold">Prometheus</h3>
-            <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
+            <pre className="bg-black/40 p-4 rounded-lg overflow-x-auto">
               <code>{`apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
@@ -97,10 +97,10 @@ spec:
             </pre>
 
             <h3 className="text-xl font-semibold mt-6">Grafana Dashboard</h3>
-            <p className="text-gray-600">
+            <p className="text-fl-mute">
               Import the K8sGPT dashboard into Grafana:
             </p>
-            <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
+            <pre className="bg-black/40 p-4 rounded-lg overflow-x-auto">
               <code>{`# Dashboard ID: 12345
 # Available at: https://grafana.com/grafana/dashboards/12345`}</code>
             </pre>
@@ -110,11 +110,11 @@ spec:
         <section>
           <h2 className="text-2xl font-bold mb-4">Notification Systems</h2>
           <div className="space-y-4">
-            <p className="text-gray-600">
+            <p className="text-fl-mute">
               Send K8sGPT analysis results to various notification systems:
             </p>
             <h3 className="text-xl font-semibold">Slack</h3>
-            <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
+            <pre className="bg-black/40 p-4 rounded-lg overflow-x-auto">
               <code>{`apiVersion: v1
 kind: Secret
 metadata:
@@ -126,7 +126,7 @@ stringData:
             </pre>
 
             <h3 className="text-xl font-semibold mt-6">Email</h3>
-            <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
+            <pre className="bg-black/40 p-4 rounded-lg overflow-x-auto">
               <code>{`apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -139,7 +139,7 @@ data:
             </pre>
 
             <h3 className="text-xl font-semibold mt-6">Webhooks</h3>
-            <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
+            <pre className="bg-black/40 p-4 rounded-lg overflow-x-auto">
               <code>{`apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -155,11 +155,11 @@ data:
         <section>
           <h2 className="text-2xl font-bold mb-4">Service Mesh Integration</h2>
           <div className="space-y-4">
-            <p className="text-gray-600">
+            <p className="text-fl-mute">
               Integrate K8sGPT with service mesh solutions:
             </p>
             <h3 className="text-xl font-semibold">Istio</h3>
-            <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
+            <pre className="bg-black/40 p-4 rounded-lg overflow-x-auto">
               <code>{`apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
@@ -176,7 +176,7 @@ spec:
             </pre>
 
             <h3 className="text-xl font-semibold mt-6">Linkerd</h3>
-            <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
+            <pre className="bg-black/40 p-4 rounded-lg overflow-x-auto">
               <code>{`apiVersion: linkerd.io/v1alpha2
 kind: ServiceProfile
 metadata:
@@ -196,11 +196,11 @@ spec:
         <section>
           <h2 className="text-2xl font-bold mb-4">Logging Integration</h2>
           <div className="space-y-4">
-            <p className="text-gray-600">
+            <p className="text-fl-mute">
               Connect K8sGPT with your logging infrastructure:
             </p>
             <h3 className="text-xl font-semibold">Elasticsearch</h3>
-            <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
+            <pre className="bg-black/40 p-4 rounded-lg overflow-x-auto">
               <code>{`apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -211,7 +211,7 @@ data:
             </pre>
 
             <h3 className="text-xl font-semibold mt-6">Fluentd</h3>
-            <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
+            <pre className="bg-black/40 p-4 rounded-lg overflow-x-auto">
               <code>{`<match k8sgpt.**>
   @type elasticsearch
   host elasticsearch
@@ -230,11 +230,11 @@ data:
         <section>
           <h2 className="text-2xl font-bold mb-4">Custom Integrations</h2>
           <div className="space-y-4">
-            <p className="text-gray-600">
+            <p className="text-fl-mute">
               Create custom integrations using K8sGPT's API:
             </p>
             <h3 className="text-xl font-semibold">REST API</h3>
-            <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
+            <pre className="bg-black/40 p-4 rounded-lg overflow-x-auto">
               <code>{`# Start the API server
 k8sgpt serve --port=8080
 
@@ -245,7 +245,7 @@ curl -X POST http://localhost:8080/api/analyze \\
             </pre>
 
             <h3 className="text-xl font-semibold mt-6">Webhook Integration</h3>
-            <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
+            <pre className="bg-black/40 p-4 rounded-lg overflow-x-auto">
               <code>{`apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -261,7 +261,7 @@ data:
         <section>
           <h2 className="text-2xl font-bold mb-4">Best Practices</h2>
           <div className="space-y-4">
-            <ul className="list-disc pl-6 space-y-2 text-gray-600">
+            <ul className="list-disc pl-6 space-y-2 text-fl-mute">
               <li>Use appropriate authentication for all integrations</li>
               <li>Implement rate limiting to prevent overloading</li>
               <li>Set up proper error handling and retries</li>

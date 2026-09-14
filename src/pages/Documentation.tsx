@@ -58,15 +58,27 @@ const searchIndex = [
     section: 'Tutorials',
     content: 'Learn how to use K8sGPT\'s observability features to monitor and analyze your Kubernetes cluster.'
   },
+
   {
+    title: 'Auto-Remediation',
+    link: '/docs/tutorials/auto-remediation',
+    section: 'Tutorials',
+    content: 'Let the K8sGPT operator patch failing resources under a risk threshold, tracked as Mutation resources.'
+  },
+  {
+    title: 'Integrations',
+    link: '/docs/tutorials/integrations',
+    section: 'Tutorials',
+    content: 'Feed Trivy, Prometheus, Kyverno, KEDA and AWS findings into K8sGPT analysis.'
+  },  {
     title: 'CLI Reference',
-    link: '/docs/reference/cli-reference',
+    link: '/docs/reference/cli',
     section: 'Reference',
     content: 'Comprehensive reference for K8sGPT command-line interface commands and options.'
   },
   {
     title: 'Operator Reference',
-    link: '/docs/reference/operator-reference',
+    link: '/docs/reference/operator',
     section: 'Reference',
     content: 'Detailed documentation for the K8sGPT operator deployment and configuration.'
   },
@@ -89,6 +101,20 @@ const searchIndex = [
     content: 'Learn about K8sGPT\'s caching mechanisms and how to configure them for optimal performance.'
   }
 ];
+
+// Homepage theme tokens, scoped to this page.
+const pageVars = {
+  '--fl-bg': '6 8 12',
+  '--fl-panel': '12 16 23',
+  '--fl-line': '26 33 44',
+  '--fl-ink': '231 237 244',
+  '--fl-mute': '133 145 163',
+  '--fl-accent': '49 206 232',
+  '--fl-accent2': '51 165 242',
+  '--fl-warn': '255 181 71',
+  '--fl-bad': '255 107 107',
+  '--fl-good': '70 227 166',
+} as React.CSSProperties;
 
 const Documentation: React.FC = () => {
   const [activeSection, setActiveSection] = useState('getting-started');
@@ -131,12 +157,12 @@ const Documentation: React.FC = () => {
   ];
 
   return (
-    <div className="bg-white">
+    <div className="min-h-screen bg-fl-bg text-fl-ink" style={pageVars}>
       {/* Header */}
-      <div className="relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-14">
+      <div className="border-b border-fl-line pt-14">
         <div className="mx-auto max-w-7xl px-6 pb-8 pt-10 sm:pb-12 lg:px-8">
           <div className="flex justify-between items-center">
-            <Link to="/" className="inline-flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-500">
+            <Link to="/" className="inline-flex items-center text-sm font-medium text-fl-accent hover:text-fl-accent">
               <ArrowLeftIcon className="mr-2 h-4 w-4" />
               Back to Home
             </Link>
@@ -146,25 +172,25 @@ const Documentation: React.FC = () => {
                 <input
                   type="text"
                   placeholder="Search documentation..."
-                  className="w-64 pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  className="w-64 pl-10 pr-4 py-2 rounded-lg border border-fl-line bg-fl-panel text-sm text-fl-ink placeholder:text-fl-mute/60 focus:outline-none focus:ring-2 focus:ring-fl-accent focus:border-transparent"
                   value={searchQuery}
                   onChange={(e) => handleSearch(e.target.value)}
                   onFocus={() => setIsSearchOpen(true)}
                 />
-                <MagnifyingGlassIcon className="h-5 w-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" />
+                <MagnifyingGlassIcon className="h-5 w-5 text-fl-mute absolute left-3 top-1/2 transform -translate-y-1/2" />
               </div>
               {isSearchOpen && searchResults.length > 0 && (
-                <div className="absolute right-0 mt-2 w-96 bg-white rounded-lg shadow-lg border border-gray-200 max-h-96 overflow-y-auto">
+                <div className="absolute right-0 z-50 mt-2 w-96 bg-fl-panel rounded-lg shadow-xl border border-fl-line max-h-96 overflow-y-auto">
                   {searchResults.map((result, index) => (
                     <Link
                       key={index}
                       to={result.link}
-                      className="block px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-b-0"
+                      className="block px-4 py-3 hover:bg-white/5 border-b border-fl-line last:border-b-0"
                       onClick={() => setIsSearchOpen(false)}
                     >
-                      <div className="text-sm font-medium text-gray-900">{result.title}</div>
-                      <div className="text-xs text-indigo-600 mb-1">{result.section}</div>
-                      <div className="text-xs text-gray-500 line-clamp-2">{result.content}</div>
+                      <div className="text-sm font-medium text-fl-ink">{result.title}</div>
+                      <div className="text-xs text-fl-accent mb-1">{result.section}</div>
+                      <div className="text-xs text-fl-mute line-clamp-2">{result.content}</div>
                     </Link>
                   ))}
                 </div>
@@ -172,7 +198,7 @@ const Documentation: React.FC = () => {
             </div>
           </div>
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h1 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Documentation</h1>
+            <h1 className="mt-2 text-4xl font-bold tracking-tight text-fl-ink sm:text-6xl">Documentation</h1>
           </div>
         </div>
       </div>
@@ -180,14 +206,14 @@ const Documentation: React.FC = () => {
       {/* Documentation Content */}
       <div className="mx-auto max-w-7xl px-6 lg:px-8 pb-24">
         {/* Info Box */}
-        <div className="mb-8 rounded-md bg-blue-50 p-4">
+        <div className="mb-8 rounded-md bg-fl-panel p-4">
           <div className="flex">
             <div className="flex-shrink-0">
-              <InformationCircleIcon className="h-5 w-5 text-blue-400" aria-hidden="true" />
+              <InformationCircleIcon className="h-5 w-5 text-fl-accent" aria-hidden="true" />
             </div>
             <div className="ml-3">
-              <h3 className="text-sm font-medium text-blue-800">Documentation Notice</h3>
-              <div className="mt-2 text-sm text-blue-700">
+              <h3 className="text-sm font-medium text-fl-ink">Documentation Notice</h3>
+              <div className="mt-2 text-sm text-fl-mute">
                 <p>
                   For the most up-to-date and comprehensive documentation about K8sGPT, please visit:
                 </p>
@@ -221,8 +247,8 @@ const Documentation: React.FC = () => {
                     className={`
                       group flex items-center px-3 py-2 text-sm font-medium rounded-md
                       ${activeSection === item.id
-                        ? 'bg-indigo-50 text-indigo-600'
-                        : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50'
+                        ? 'bg-fl-accent/[0.06] text-fl-accent'
+                        : 'text-fl-mute hover:text-fl-accent hover:bg-fl-panel'
                       }
                     `}
                   >
@@ -230,8 +256,8 @@ const Documentation: React.FC = () => {
                       className={`
                         mr-3 h-6 w-6 flex-shrink-0
                         ${activeSection === item.id
-                          ? 'text-indigo-600'
-                          : 'text-gray-400 group-hover:text-indigo-600'
+                          ? 'text-fl-accent'
+                          : 'text-fl-mute group-hover:text-fl-accent'
                         }
                       `}
                     />
@@ -246,7 +272,7 @@ const Documentation: React.FC = () => {
           <div className="flex-1 min-w-0">
             {/* Getting Started Section */}
             <section id="getting-started" className="mb-16">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Getting Started</h2>
+              <h2 className="text-2xl font-bold text-fl-ink mb-6">Getting Started</h2>
               
               <div className="prose max-w-none">
                 <h3>Overview</h3>
@@ -256,34 +282,34 @@ const Documentation: React.FC = () => {
                 </p>
 
                 <div className="mt-8 grid gap-6 sm:grid-cols-2">
-                  <div className="rounded-lg border border-gray-200 p-6">
+                  <div className="rounded-lg border border-fl-line p-6">
                     <h4 className="text-lg font-semibold mb-2">Installation</h4>
-                    <p className="text-gray-600 mb-4">Quick start guide for installing K8sGPT on your system.</p>
-                    <Link to="/docs/getting-started/installation" className="text-indigo-600 hover:text-indigo-500">
+                    <p className="text-fl-mute mb-4">Quick start guide for installing K8sGPT on your system.</p>
+                    <Link to="/docs/getting-started/installation" className="text-fl-accent hover:text-fl-accent">
                       Learn more →
                     </Link>
                   </div>
 
-                  <div className="rounded-lg border border-gray-200 p-6">
+                  <div className="rounded-lg border border-fl-line p-6">
                     <h4 className="text-lg font-semibold mb-2">In-Cluster Operator</h4>
-                    <p className="text-gray-600 mb-4">Deploy K8sGPT as an operator in your Kubernetes cluster.</p>
-                    <Link to="/docs/getting-started/in-cluster-operator" className="text-indigo-600 hover:text-indigo-500">
+                    <p className="text-fl-mute mb-4">Deploy K8sGPT as an operator in your Kubernetes cluster.</p>
+                    <Link to="/docs/getting-started/in-cluster-operator" className="text-fl-accent hover:text-fl-accent">
                       Learn more →
                     </Link>
                   </div>
 
-                  <div className="rounded-lg border border-gray-200 p-6">
+                  <div className="rounded-lg border border-fl-line p-6">
                     <h4 className="text-lg font-semibold mb-2">CLI Configuration</h4>
-                    <p className="text-gray-600 mb-4">Configure K8sGPT CLI settings and options.</p>
-                    <Link to="/docs/getting-started/cli-configuration" className="text-indigo-600 hover:text-indigo-500">
+                    <p className="text-fl-mute mb-4">Configure K8sGPT CLI settings and options.</p>
+                    <Link to="/docs/getting-started/cli-configuration" className="text-fl-accent hover:text-fl-accent">
                       Learn more →
                     </Link>
                   </div>
 
-                  <div className="rounded-lg border border-gray-200 p-6">
+                  <div className="rounded-lg border border-fl-line p-6">
                     <h4 className="text-lg font-semibold mb-2">Operator Configuration</h4>
-                    <p className="text-gray-600 mb-4">Configure the K8sGPT Operator for your Kubernetes cluster.</p>
-                    <Link to="/docs/getting-started/operator-configuration" className="text-indigo-600 hover:text-indigo-500">
+                    <p className="text-fl-mute mb-4">Configure the K8sGPT Operator for your Kubernetes cluster.</p>
+                    <Link to="/docs/getting-started/operator-configuration" className="text-fl-accent hover:text-fl-accent">
                       Learn more →
                     </Link>
                   </div>
@@ -293,45 +319,61 @@ const Documentation: React.FC = () => {
 
             {/* Tutorials Section */}
             <section id="tutorials" className="mb-16">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Tutorials</h2>
+              <h2 className="text-2xl font-bold text-fl-ink mb-6">Tutorials</h2>
               
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                <div className="rounded-lg border border-gray-200 p-6">
+                <div className="rounded-lg border border-fl-line p-6">
                   <h3 className="text-lg font-semibold mb-2">K8sGPT Playground</h3>
-                  <p className="text-gray-600 mb-4">Try out K8sGPT features in an interactive environment.</p>
-                  <Link to="/docs/tutorials/playground" className="text-indigo-600 hover:text-indigo-500">
+                  <p className="text-fl-mute mb-4">Try out K8sGPT features in an interactive environment.</p>
+                  <Link to="/docs/tutorials/playground" className="text-fl-accent hover:text-fl-accent">
                     Start learning →
                   </Link>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 p-6">
+                <div className="rounded-lg border border-fl-line p-6">
                   <h3 className="text-lg font-semibold mb-2">Custom Analyzers</h3>
-                  <p className="text-gray-600 mb-4">Learn how to create your own custom analyzers.</p>
-                  <Link to="/docs/tutorials/custom-analyzers" className="text-indigo-600 hover:text-indigo-500">
+                  <p className="text-fl-mute mb-4">Learn how to create your own custom analyzers.</p>
+                  <Link to="/docs/tutorials/custom-analyzers" className="text-fl-accent hover:text-fl-accent">
                     Start learning →
                   </Link>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 p-6">
+                <div className="rounded-lg border border-fl-line p-6">
                   <h3 className="text-lg font-semibold mb-2">Slack Integration</h3>
-                  <p className="text-gray-600 mb-4">Set up K8sGPT notifications in Slack.</p>
-                  <Link to="/docs/tutorials/slack-integration" className="text-indigo-600 hover:text-indigo-500">
+                  <p className="text-fl-mute mb-4">Set up K8sGPT notifications in Slack.</p>
+                  <Link to="/docs/tutorials/slack-integration" className="text-fl-accent hover:text-fl-accent">
                     Start learning →
                   </Link>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 p-6">
+                <div className="rounded-lg border border-fl-line p-6">
                   <h3 className="text-lg font-semibold mb-2">Custom Rest Backend</h3>
-                  <p className="text-gray-600 mb-4">Integrate a custom backend with k8sgpt using RESTful API.</p>
-                  <Link to="/docs/tutorials/custom-rest-backend" className="text-indigo-600 hover:text-indigo-500">
+                  <p className="text-fl-mute mb-4">Integrate a custom backend with k8sgpt using RESTful API.</p>
+                  <Link to="/docs/tutorials/custom-rest-backend" className="text-fl-accent hover:text-fl-accent">
                     Start learning →
                   </Link>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 p-6">
+                <div className="rounded-lg border border-fl-line p-6">
                   <h3 className="text-lg font-semibold mb-2">Observability</h3>
-                  <p className="text-gray-600 mb-4">Integrate Prometheus and Grafana with K8sGPT.</p>
-                  <Link to="/docs/tutorials/observability" className="text-indigo-600 hover:text-indigo-500">
+                  <p className="text-fl-mute mb-4">Integrate Prometheus and Grafana with K8sGPT.</p>
+                  <Link to="/docs/tutorials/observability" className="text-fl-accent hover:text-fl-accent">
+                    Start learning →
+                  </Link>
+                </div>
+
+                <div className="rounded-lg border border-fl-line p-6">
+                  <h3 className="text-lg font-semibold mb-2">Auto-Remediation</h3>
+                  <p className="text-fl-mute mb-4">Let the operator patch failing resources under a risk threshold.</p>
+                  <Link to="/docs/tutorials/auto-remediation" className="text-fl-accent hover:text-fl-accent">
+                    Start learning →
+                  </Link>
+                </div>
+
+                <div className="rounded-lg border border-fl-line p-6">
+                  <h3 className="text-lg font-semibold mb-2">Integrations</h3>
+                  <p className="text-fl-mute mb-4">Feed Trivy, Prometheus, Kyverno, KEDA and AWS findings into analysis.</p>
+                  <Link to="/docs/tutorials/integrations" className="text-fl-accent hover:text-fl-accent">
                     Start learning →
                   </Link>
                 </div>
@@ -340,7 +382,7 @@ const Documentation: React.FC = () => {
 
             {/* Reference Section */}
             <section id="reference" className="mb-16">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Reference</h2>
+              <h2 className="text-2xl font-bold text-fl-ink mb-6">Reference</h2>
               
               <div className="prose max-w-none">
                 <div className="grid gap-6 sm:grid-cols-2">
@@ -348,22 +390,22 @@ const Documentation: React.FC = () => {
                     <h3>CLI Reference</h3>
                     <ul className="mt-4 space-y-3">
                       <li>
-                        <Link to="/docs/reference/cli" className="text-gray-600 hover:text-indigo-600">
+                        <Link to="/docs/reference/cli" className="text-fl-mute hover:text-fl-accent">
                           Overview & Installation
                         </Link>
                       </li>
                       <li>
-                        <Link to="/docs/reference/cli#basic-commands" className="text-gray-600 hover:text-indigo-600">
+                        <Link to="/docs/reference/cli#basic-commands" className="text-fl-mute hover:text-fl-accent">
                           Basic Commands
                         </Link>
                       </li>
                       <li>
-                        <Link to="/docs/reference/cli#additional-commands" className="text-gray-600 hover:text-indigo-600">
+                        <Link to="/docs/reference/cli#additional-commands" className="text-fl-mute hover:text-fl-accent">
                           Additional Commands
                         </Link>
                       </li>
                       <li>
-                        <Link to="/docs/reference/cli#serve-mode" className="text-gray-600 hover:text-indigo-600">
+                        <Link to="/docs/reference/cli#serve-mode" className="text-fl-mute hover:text-fl-accent">
                           Serve Mode
                         </Link>
                       </li>
@@ -374,17 +416,17 @@ const Documentation: React.FC = () => {
                     <h3>Additional References</h3>
                     <ul className="mt-4 space-y-3">
                       <li>
-                        <Link to="/docs/reference/providers" className="text-gray-600 hover:text-indigo-600">
+                        <Link to="/docs/reference/providers" className="text-fl-mute hover:text-fl-accent">
                           AI Providers
                         </Link>
                       </li>
                       <li>
-                        <Link to="/docs/reference/operator" className="text-gray-600 hover:text-indigo-600">
+                        <Link to="/docs/reference/operator" className="text-fl-mute hover:text-fl-accent">
                           Operator Guide
                         </Link>
                       </li>
                       <li>
-                        <Link to="/docs/reference/mcp" className="text-gray-600 hover:text-indigo-600">
+                        <Link to="/docs/reference/mcp" className="text-fl-mute hover:text-fl-accent">
                           MCP Server
                         </Link>
                       </li>
@@ -396,28 +438,28 @@ const Documentation: React.FC = () => {
 
             {/* Explanation Section */}
             <section id="explanation" className="mb-16">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Explanation</h2>
+              <h2 className="text-2xl font-bold text-fl-ink mb-6">Explanation</h2>
               
               <div className="prose max-w-none">
                 <div className="grid gap-6 sm:grid-cols-2">
-                  <div className="rounded-lg border border-gray-200 p-6">
+                  <div className="rounded-lg border border-fl-line p-6">
                     <h3 className="text-lg font-semibold mb-2">Integration</h3>
-                    <p className="text-gray-600 mb-4">
+                    <p className="text-fl-mute mb-4">
                       Learn about integrating K8sGPT with your existing Kubernetes infrastructure
                       and other tools in your stack.
                     </p>
-                    <Link to="/docs/explanation/integration" className="text-indigo-600 hover:text-indigo-500">
+                    <Link to="/docs/explanation/integration" className="text-fl-accent hover:text-fl-accent">
                       Read more →
                     </Link>
                   </div>
 
-                  <div className="rounded-lg border border-gray-200 p-6">
+                  <div className="rounded-lg border border-fl-line p-6">
                     <h3 className="text-lg font-semibold mb-2">Caching</h3>
-                    <p className="text-gray-600 mb-4">
+                    <p className="text-fl-mute mb-4">
                       Understanding how K8sGPT uses caching to improve performance and reduce
                       API calls to AI providers.
                     </p>
-                    <Link to="/docs/explanation/caching" className="text-indigo-600 hover:text-indigo-500">
+                    <Link to="/docs/explanation/caching" className="text-fl-accent hover:text-fl-accent">
                       Read more →
                     </Link>
                   </div>

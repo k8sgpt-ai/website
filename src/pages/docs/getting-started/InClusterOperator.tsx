@@ -5,13 +5,13 @@ const InClusterOperator = () => {
     <DocPage
       title="In-Cluster Operator"
       description="Deploy K8sGPT in your Kubernetes cluster using the operator"
-      prev={{ title: 'Installation', href: '/docs/getting-started/installation' }}
+      prev={{ title: 'Operator Configuration', href: '/docs/getting-started/operator-configuration' }}
       next={{ title: 'Playground', href: '/docs/tutorials/playground' }}
     >
       <div className="space-y-8">
         <section>
           <h2 className="text-2xl font-bold mb-4">Overview</h2>
-          <p className="text-gray-600 mb-4">
+          <p className="text-fl-mute mb-4">
             The K8sGPT Operator allows you to deploy and manage K8sGPT within your Kubernetes cluster.
             This provides a more integrated experience and enables automated analysis of your cluster.
           </p>
@@ -43,7 +43,7 @@ const InClusterOperator = () => {
 
         <section>
           <h2 className="text-2xl font-bold mb-4">Prerequisites</h2>
-          <ul className="list-disc pl-6 space-y-2 text-gray-600">
+          <ul className="list-disc pl-6 space-y-2 text-fl-mute">
             <li>Kubernetes cluster (1.19+)</li>
             <li>kubectl configured to communicate with your cluster</li>
             <li>Helm 3.x installed</li>
@@ -54,10 +54,10 @@ const InClusterOperator = () => {
         <section>
           <h2 className="text-2xl font-bold mb-4">Installation</h2>
           <div className="space-y-4">
-            <p className="text-gray-600">
+            <p className="text-fl-mute">
               Install the K8sGPT operator using Helm:
             </p>
-            <div className="bg-gray-100 p-4 rounded-lg">
+            <div className="bg-black/40 p-4 rounded-lg">
               <code className="text-sm">
                 helm repo add k8sgpt https://charts.k8sgpt.ai
                 <br />
@@ -72,10 +72,10 @@ const InClusterOperator = () => {
         <section>
           <h2 className="text-2xl font-bold mb-4">Configuration</h2>
           <div className="space-y-4">
-            <p className="text-gray-600">
+            <p className="text-fl-mute">
               Create a K8sGPT configuration with your AI provider settings:
             </p>
-            <div className="bg-gray-100 p-4 rounded-lg">
+            <div className="bg-black/40 p-4 rounded-lg">
               <code className="text-sm">
                 apiVersion: core.k8sgpt.ai/v1
                 <br />
@@ -112,10 +112,10 @@ const InClusterOperator = () => {
         <section>
           <h2 className="text-2xl font-bold mb-4">Secret Management</h2>
           <div className="space-y-4">
-            <p className="text-gray-600">
+            <p className="text-fl-mute">
               Create a Kubernetes secret with your AI provider credentials:
             </p>
-            <div className="bg-gray-100 p-4 rounded-lg">
+            <div className="bg-black/40 p-4 rounded-lg">
               <code className="text-sm">
                 kubectl create secret generic k8sgpt-secret \
                 <br />
@@ -128,10 +128,10 @@ const InClusterOperator = () => {
         <section>
           <h2 className="text-2xl font-bold mb-4">Verifying Installation</h2>
           <div className="space-y-4">
-            <p className="text-gray-600">
+            <p className="text-fl-mute">
               Check if the operator and K8sGPT are running:
             </p>
-            <div className="bg-gray-100 p-4 rounded-lg">
+            <div className="bg-black/40 p-4 rounded-lg">
               <code className="text-sm">
                 kubectl get pods -n k8sgpt
                 <br />
@@ -143,7 +143,7 @@ const InClusterOperator = () => {
 
         <section>
           <h2 className="text-2xl font-bold mb-4">Next Steps</h2>
-          <ul className="list-disc pl-6 space-y-2 text-gray-600">
+          <ul className="list-disc pl-6 space-y-2 text-fl-mute">
             <li>Configure custom analyzers for your specific needs</li>
             <li>Set up integrations with notification systems</li>
             <li>Explore the playground for interactive analysis</li>

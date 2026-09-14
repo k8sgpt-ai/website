@@ -52,7 +52,19 @@ const searchIndex = [
     section: 'Tutorials',
     content: 'Learn how to use K8sGPT\'s observability features to monitor and analyze your Kubernetes cluster.'
   },
+
   {
+    title: 'Auto-Remediation',
+    link: '/docs/tutorials/auto-remediation',
+    section: 'Tutorials',
+    content: 'Let the K8sGPT operator patch failing resources under a risk threshold, tracked as Mutation resources.'
+  },
+  {
+    title: 'Integrations',
+    link: '/docs/tutorials/integrations',
+    section: 'Tutorials',
+    content: 'Feed Trivy, Prometheus, Kyverno, KEDA and AWS findings into K8sGPT analysis.'
+  },  {
     title: 'CLI Reference',
     link: '/docs/reference/cli',
     section: 'Reference',
@@ -60,7 +72,7 @@ const searchIndex = [
   },
   {
     title: 'Operator Reference',
-    link: '/docs/reference/operator-reference',
+    link: '/docs/reference/operator',
     section: 'Reference',
     content: 'Detailed documentation for the K8sGPT operator deployment and configuration.'
   },
@@ -122,25 +134,25 @@ const DocSearch: React.FC = () => {
         <input
           type="text"
           placeholder="Search documentation..."
-          className="w-64 pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          className="w-64 pl-10 pr-4 py-2 rounded-lg border border-fl-line bg-fl-panel text-sm text-fl-ink placeholder:text-fl-mute/60 focus:outline-none focus:ring-2 focus:ring-fl-accent focus:border-transparent"
           value={searchQuery}
           onChange={(e) => handleSearch(e.target.value)}
           onFocus={() => setIsSearchOpen(true)}
         />
-        <MagnifyingGlassIcon className="h-5 w-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" />
+        <MagnifyingGlassIcon className="h-5 w-5 text-fl-mute absolute left-3 top-1/2 transform -translate-y-1/2" />
       </div>
       {isSearchOpen && searchResults.length > 0 && (
-        <div className="absolute right-0 mt-2 w-96 bg-white rounded-lg shadow-lg border border-gray-200 max-h-96 overflow-y-auto">
+        <div className="absolute right-0 z-50 mt-2 w-96 rounded-lg border border-fl-line bg-fl-panel shadow-xl max-h-96 overflow-y-auto">
           {searchResults.map((result, index) => (
             <Link
               key={index}
               to={result.link}
-              className="block px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-b-0"
+              className="block px-4 py-3 hover:bg-white/5 border-b border-fl-line last:border-b-0"
               onClick={() => setIsSearchOpen(false)}
             >
-              <div className="text-sm font-medium text-gray-900">{result.title}</div>
-              <div className="text-xs text-indigo-600 mb-1">{result.section}</div>
-              <div className="text-xs text-gray-500 line-clamp-2">{result.content}</div>
+              <div className="text-sm font-medium text-fl-ink">{result.title}</div>
+              <div className="text-xs text-fl-accent mb-1">{result.section}</div>
+              <div className="text-xs text-fl-mute line-clamp-2">{result.content}</div>
             </Link>
           ))}
         </div>

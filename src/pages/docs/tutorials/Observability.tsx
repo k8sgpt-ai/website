@@ -7,19 +7,19 @@ const Observability: React.FC = () => {
       title="Observability"
       description="Learn how to integrate Prometheus and Grafana with K8sGPT"
       prev={{ title: "Custom Rest Backend", href: "/docs/tutorials/custom-rest-backend" }}
-      next={{ title: "CLI Reference", href: "/docs/reference/cli" }}
+      next={{ title: "Auto-Remediation", href: "/docs/tutorials/auto-remediation" }}
     >
       <div className="space-y-8">
         <section>
           <h2 className="text-2xl font-bold mb-4">Overview</h2>
-          <p className="text-gray-600 mb-4">
+          <p className="text-fl-mute mb-4">
             K8sGPT provides comprehensive observability features that allow you to monitor and analyze your Kubernetes clusters effectively. This tutorial will guide you through setting up Prometheus and Grafana integration with K8sGPT.
           </p>
         </section>
 
         <section>
           <h2 className="text-2xl font-bold mb-4">Prerequisites</h2>
-          <ul className="list-disc pl-6 space-y-2 text-gray-600">
+          <ul className="list-disc pl-6 space-y-2 text-fl-mute">
             <li>K8sGPT installed in your cluster</li>
             <li>Prometheus and Grafana installed in your cluster</li>
             <li>Access to your cluster's monitoring stack</li>
@@ -29,10 +29,10 @@ const Observability: React.FC = () => {
 
         <section>
           <h2 className="text-2xl font-bold mb-4">Metrics and Monitoring</h2>
-          <p className="text-gray-600 mb-4">
+          <p className="text-fl-mute mb-4">
             K8sGPT exposes several metrics that can be collected by Prometheus:
           </p>
-          <div className="bg-gray-50 p-4 rounded-lg">
+          <div className="bg-fl-panel p-4 rounded-lg">
             <pre className="text-sm">
               <code>
 {`# HELP k8sgpt_analysis_duration_seconds Duration of K8sGPT analysis
@@ -55,7 +55,7 @@ k8sgpt_issues_total{severity="warning"} 0`}
 
         <section>
           <h2 className="text-2xl font-bold mb-4">Setting Up Prometheus</h2>
-          <ol className="list-decimal pl-6 space-y-4 text-gray-600">
+          <ol className="list-decimal pl-6 space-y-4 text-fl-mute">
             <li>
               <strong>Configure ServiceMonitor:</strong> Create a ServiceMonitor resource to tell Prometheus to scrape K8sGPT metrics.
             </li>
@@ -70,10 +70,10 @@ k8sgpt_issues_total{severity="warning"} 0`}
 
         <section>
           <h2 className="text-2xl font-bold mb-4">Grafana Dashboards</h2>
-          <p className="text-gray-600 mb-4">
+          <p className="text-fl-mute mb-4">
             Import the following Grafana dashboard to visualize K8sGPT metrics:
           </p>
-          <div className="bg-gray-50 p-4 rounded-lg">
+          <div className="bg-fl-panel p-4 rounded-lg">
             <pre className="text-sm">
               <code>
 {`{
@@ -110,10 +110,10 @@ k8sgpt_issues_total{severity="warning"} 0`}
 
         <section>
           <h2 className="text-2xl font-bold mb-4">Logging Integration</h2>
-          <p className="text-gray-600 mb-4">
+          <p className="text-fl-mute mb-4">
             K8sGPT logs can be integrated with your existing logging stack:
           </p>
-          <ul className="list-disc pl-6 space-y-2 text-gray-600">
+          <ul className="list-disc pl-6 space-y-2 text-fl-mute">
             <li>Configure log levels and output format</li>
             <li>Set up log aggregation with Fluentd or similar tools</li>
             <li>Create log-based alerts for critical issues</li>
@@ -122,7 +122,7 @@ k8sgpt_issues_total{severity="warning"} 0`}
 
         <section>
           <h2 className="text-2xl font-bold mb-4">Best Practices</h2>
-          <ul className="list-disc pl-6 space-y-2 text-gray-600">
+          <ul className="list-disc pl-6 space-y-2 text-fl-mute">
             <li>Regularly review and update alerting thresholds</li>
             <li>Set up proper retention policies for metrics and logs</li>
             <li>Implement proper access controls for monitoring data</li>

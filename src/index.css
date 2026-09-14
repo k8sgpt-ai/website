@@ -11,6 +11,13 @@
   }
 }
 
+@layer base {
+  section[id],
+  div[id] {
+    scroll-margin-top: 6rem;
+  }
+}
+
 @layer utilities {
   .animation-delay-2000 {
     animation-delay: 2s;

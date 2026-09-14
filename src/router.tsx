@@ -19,6 +19,8 @@ import SlackIntegration from './pages/docs/tutorials/SlackIntegration';
 import Observability from './pages/docs/tutorials/Observability';
 import CustomRestBackend from './pages/docs/tutorials/CustomRestBackend';
 import OllamaIntegration from './pages/docs/tutorials/OllamaIntegration';
+import AutoRemediationGuide from './pages/docs/tutorials/AutoRemediation';
+import Integrations from './pages/docs/tutorials/Integrations';
 
 // Reference Pages
 import CLIReference from './pages/docs/reference/CLIReference';
@@ -104,6 +106,14 @@ export const router = createBrowserRouter([
       {
         path: 'docs/tutorials/custom-rest-backend',
         element: <CustomRestBackend />,
+      },
+      {
+        path: 'docs/tutorials/auto-remediation',
+        element: <AutoRemediationGuide />,
+      },
+      {
+        path: 'docs/tutorials/integrations',
+        element: <Integrations />,
       },
       // Reference Routes
       {

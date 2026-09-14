@@ -11,7 +11,7 @@ const Playground = () => {
       <div className="space-y-8">
         <section>
           <h2 className="text-2xl font-bold mb-4">Overview</h2>
-          <p className="text-gray-600 mb-4">
+          <p className="text-fl-mute mb-4">
             Explore the K8sGPT command-line interface (CLI) in a hands-on, interactive terminal environment powered by Killercoda.
             This playground allows you to experiment with K8sGPT commands in a pre-configured Kubernetes cluster without any local setup.
           </p>
@@ -20,7 +20,7 @@ const Playground = () => {
         <section>
           <h2 className="text-2xl font-bold mb-4">Accessing the Playground</h2>
           <div className="space-y-4">
-            <p className="text-gray-600">
+            <p className="text-fl-mute">
               Launch the interactive CLI scenario directly in your browser using the Killercoda platform:
             </p>
             <div className="my-4">
@@ -33,7 +33,7 @@ const Playground = () => {
                 Launch K8sGPT CLI Scenario
               </a>
             </div>
-            <p className="text-gray-600">
+            <p className="text-fl-mute">
               No installation is required, just click the link to start the environment.
             </p>
           </div>
@@ -41,7 +41,7 @@ const Playground = () => {
 
         <section>
           <h2 className="text-2xl font-bold mb-4">Features</h2>
-          <ul className="list-disc pl-6 space-y-2 text-gray-600">
+          <ul className="list-disc pl-6 space-y-2 text-fl-mute">
             <li>Run K8sGPT CLI commands in a real terminal.</li>
             <li>Interact with a pre-configured Kubernetes environment.</li>
             <li>Test different analysis options and filters.</li>
@@ -54,16 +54,16 @@ const Playground = () => {
         <section>
           <h2 className="text-2xl font-bold mb-4">Using the Playground</h2>
           <div className="space-y-4">
-            <p className="text-gray-600">
-              Once the Killercoda environment loads, you will have access to a terminal where you can directly run <code className="bg-gray-100 px-2 py-1 rounded">k8sgpt</code> commands.
+            <p className="text-fl-mute">
+              Once the Killercoda environment loads, you will have access to a terminal where you can directly run <code className="bg-black/40 px-2 py-1 rounded">k8sgpt</code> commands.
             </p>
-            <p className="text-gray-600">
+            <p className="text-fl-mute">
               Follow the instructions provided within the Killercoda scenario pane to guide your exploration. You can typically:
             </p>
-            <ol className="list-decimal pl-6 space-y-2 text-gray-600">
-              <li>Verify the K8sGPT installation (<code className="bg-gray-100 px-2 py-1 rounded">k8sgpt version</code>).</li>
+            <ol className="list-decimal pl-6 space-y-2 text-fl-mute">
+              <li>Verify the K8sGPT installation (<code className="bg-black/40 px-2 py-1 rounded">k8sgpt version</code>).</li>
               <li>Configure AI provider details (if applicable to the scenario).</li>
-              <li>Run analysis commands (<code className="bg-gray-100 px-2 py-1 rounded">k8sgpt analyze</code>).</li>
+              <li>Run analysis commands (<code className="bg-black/40 px-2 py-1 rounded">k8sgpt analyze</code>).</li>
               <li>Explore filtering and output options.</li>
               <li>Test specific analyzers.</li>
             </ol>
@@ -73,10 +73,10 @@ const Playground = () => {
         <section>
           <h2 className="text-2xl font-bold mb-4">Limitations</h2>
           <div className="space-y-4">
-            <p className="text-gray-600">
+            <p className="text-fl-mute">
               The Killercoda environment has some limitations:
             </p>
-            <ul className="list-disc pl-6 space-y-2 text-gray-600">
+            <ul className="list-disc pl-6 space-y-2 text-fl-mute">
               <li>Time-limited sessions (usually 1 hour).</li>
               <li>Environment resets after the session ends.</li>
               <li>Network access might be restricted.</li>
@@ -88,10 +88,10 @@ const Playground = () => {
         <section>
           <h2 className="text-2xl font-bold mb-4">Next Steps</h2>
           <div className="space-y-4">
-            <p className="text-gray-600">
+            <p className="text-fl-mute">
               After exploring the CLI playground, you can:
             </p>
-            <ul className="list-disc pl-6 space-y-2 text-gray-600">
+            <ul className="list-disc pl-6 space-y-2 text-fl-mute">
               <li>Install K8sGPT locally or in your own cluster.</li>
               <li>Configure K8sGPT to use your preferred AI provider.</li>
               <li>Integrate K8sGPT into your CI/CD pipelines or monitoring tools.</li>

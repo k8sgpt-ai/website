@@ -6,12 +6,11 @@ const Caching = () => {
       title="Caching"
       description="Learn about K8sGPT's caching mechanisms and how to configure them"
       prev={{ title: 'Integration', href: '/docs/explanation/integration' }}
-      next={{ title: 'Overview', href: '/docs/getting-started/overview' }}
     >
       <div className="space-y-8">
         <section>
           <h2 className="text-2xl font-bold mb-4">Overview</h2>
-          <p className="text-gray-600 mb-4">
+          <p className="text-fl-mute mb-4">
             K8sGPT implements caching to improve performance and reduce API calls to AI providers.
             This page explains the caching mechanisms and how to configure them for optimal performance.
           </p>
@@ -21,10 +20,10 @@ const Caching = () => {
           <h2 className="text-2xl font-bold mb-4">Cache Types</h2>
           <div className="space-y-4">
             <h3 className="text-xl font-semibold">In-Memory Cache</h3>
-            <p className="text-gray-600">
+            <p className="text-fl-mute">
               The default caching mechanism stores results in memory for quick access:
             </p>
-            <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
+            <pre className="bg-black/40 p-4 rounded-lg overflow-x-auto">
               <code>{`# Enable in-memory caching
 k8sgpt analyze --cache=true
 
@@ -33,10 +32,10 @@ k8sgpt analyze --cache-duration=30`}</code>
             </pre>
 
             <h3 className="text-xl font-semibold mt-6">Persistent Cache</h3>
-            <p className="text-gray-600">
+            <p className="text-fl-mute">
               Store cache results on disk for persistence across restarts:
             </p>
-            <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
+            <pre className="bg-black/40 p-4 rounded-lg overflow-x-auto">
               <code>{`# Enable persistent caching
 k8sgpt analyze --cache=true --cache-type=persistent
 
@@ -45,10 +44,10 @@ k8sgpt analyze --cache-dir=/path/to/cache`}</code>
             </pre>
 
             <h3 className="text-xl font-semibold mt-6">Redis Cache</h3>
-            <p className="text-gray-600">
+            <p className="text-fl-mute">
               Use Redis for distributed caching in multi-node environments:
             </p>
-            <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
+            <pre className="bg-black/40 p-4 rounded-lg overflow-x-auto">
               <code>{`# Enable Redis caching
 k8sgpt analyze --cache=true --cache-type=redis
 
@@ -63,7 +62,7 @@ k8sgpt analyze --redis-password=your-password`}</code>
           <h2 className="text-2xl font-bold mb-4">Cache Configuration</h2>
           <div className="space-y-4">
             <h3 className="text-xl font-semibold">Environment Variables</h3>
-            <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
+            <pre className="bg-black/40 p-4 rounded-lg overflow-x-auto">
               <code>{`# Enable caching
 export K8SGPT_CACHE=true
 
@@ -82,7 +81,7 @@ export K8SGPT_REDIS_PASSWORD=your-password`}</code>
             </pre>
 
             <h3 className="text-xl font-semibold mt-6">Kubernetes Configuration</h3>
-            <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
+            <pre className="bg-black/40 p-4 rounded-lg overflow-x-auto">
               <code>{`apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -100,7 +99,7 @@ data:
           <h2 className="text-2xl font-bold mb-4">Cache Management</h2>
           <div className="space-y-4">
             <h3 className="text-xl font-semibold">Cache Operations</h3>
-            <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
+            <pre className="bg-black/40 p-4 rounded-lg overflow-x-auto">
               <code>{`# Clear the cache
 k8sgpt cache clear
 
@@ -112,10 +111,10 @@ k8sgpt cache list`}</code>
             </pre>
 
             <h3 className="text-xl font-semibold mt-6">Cache Invalidation</h3>
-            <p className="text-gray-600">
+            <p className="text-fl-mute">
               The cache is automatically invalidated when:
             </p>
-            <ul className="list-disc pl-6 space-y-2 text-gray-600">
+            <ul className="list-disc pl-6 space-y-2 text-fl-mute">
               <li>Cache duration expires</li>
               <li>Kubernetes resources change</li>
               <li>Analysis parameters change</li>
@@ -127,10 +126,10 @@ k8sgpt cache list`}</code>
         <section>
           <h2 className="text-2xl font-bold mb-4">Performance Considerations</h2>
           <div className="space-y-4">
-            <p className="text-gray-600">
+            <p className="text-fl-mute">
               Optimize caching for your use case:
             </p>
-            <ul className="list-disc pl-6 space-y-2 text-gray-600">
+            <ul className="list-disc pl-6 space-y-2 text-fl-mute">
               <li>Set appropriate cache duration based on cluster change frequency</li>
               <li>Use persistent cache for production environments</li>
               <li>Consider Redis for high-availability setups</li>
@@ -143,10 +142,10 @@ k8sgpt cache list`}</code>
         <section>
           <h2 className="text-2xl font-bold mb-4">Troubleshooting</h2>
           <div className="space-y-4">
-            <p className="text-gray-600">
+            <p className="text-fl-mute">
               Common caching issues and solutions:
             </p>
-            <ul className="list-disc pl-6 space-y-2 text-gray-600">
+            <ul className="list-disc pl-6 space-y-2 text-fl-mute">
               <li>Check cache permissions and storage space</li>
               <li>Verify Redis connectivity for distributed caching</li>
               <li>Monitor cache performance metrics</li>

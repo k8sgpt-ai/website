@@ -36,21 +36,21 @@ const Roadmap = () => {
   });
 
   return (
-    <div className="bg-white py-16 sm:py-24">
+    <div className="bg-fl-bg text-fl-ink py-16 sm:py-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h1 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+          <h1 className="text-3xl font-extrabold text-fl-ink sm:text-4xl">
             Public Roadmap
           </h1>
-          <p className="mt-4 text-lg text-gray-500">
+          <p className="mt-4 text-lg text-fl-mute">
             An overview of our planned major features and milestones. Timelines are estimates and subject to change.
           </p>
         </div>
 
         <div className="mt-12 space-y-8">
           {milestones.map((milestone, index) => (
-            <div key={index} className={`bg-gray-50 border border-gray-200 rounded-lg shadow-sm p-6 flex items-start space-x-4 ${milestone.completed ? 'opacity-75' : ''}`}>
-              <div className={`flex-shrink-0 p-2 rounded-full ${milestone.completed ? 'bg-green-500' : 'bg-primary'}`}>
+            <div key={index} className={`bg-fl-panel border border-fl-line rounded-lg shadow-sm p-6 flex items-start space-x-4 ${milestone.completed ? 'opacity-75' : ''}`}>
+              <div className={`flex-shrink-0 p-2 rounded-full ${milestone.completed ? 'bg-fl-good' : 'bg-fl-accent'}`}>
                 {milestone.completed ? (
                   <CheckCircleIcon className="h-6 w-6 text-white" aria-hidden="true" />
                 ) : (
@@ -58,20 +58,20 @@ const Roadmap = () => {
                 )}
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3 className="text-lg font-semibold text-fl-ink">
                   {milestone.title}
                   {milestone.completed && (
-                    <span className="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                    <span className="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-fl-good/10 text-fl-good">
                       Completed
                     </span>
                   )}
                 </h3>
-                <p className="text-sm font-medium text-indigo-600">Target: {milestone.quarter}</p>
-                <p className="mt-1 text-base text-gray-600">{milestone.description}</p>
+                <p className="text-sm font-medium text-fl-accent">Target: {milestone.quarter}</p>
+                <p className="mt-1 text-base text-fl-mute">{milestone.description}</p>
                 {milestone.completed && milestone.link && (
                   <Link
                     to={milestone.link}
-                    className="mt-2 inline-flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-500"
+                    className="mt-2 inline-flex items-center text-sm font-medium text-fl-accent hover:underline"
                   >
                     View Documentation
                     <svg className="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -83,7 +83,7 @@ const Roadmap = () => {
             </div>
           ))}
         </div>
-        <p className="mt-10 text-center text-sm text-gray-500">
+        <p className="mt-10 text-center text-sm text-fl-mute">
           Want to suggest a feature or contribute? Check out our <a href="https://github.com/k8sgpt-ai/k8sgpt/issues" className="text-primary hover:text-secondary font-medium" target="_blank" rel="noopener noreferrer">GitHub Issues</a>.
           You can also view our detailed backlog on the <a href="https://github.com/orgs/k8sgpt-ai/projects/1" className="text-primary hover:text-secondary font-medium" target="_blank" rel="noopener noreferrer">GitHub Project Board</a>.
         </p>
